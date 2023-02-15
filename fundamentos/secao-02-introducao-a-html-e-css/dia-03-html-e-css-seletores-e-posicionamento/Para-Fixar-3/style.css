@@ -1,0 +1,25 @@
+h1, p {
+    text-align: center;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+li a:hover, li:hover {
+    background-color: teal;
+    color: black;
+}
+
+
+a:active {
+    font-family: monospace;
+}
+
+a:visited {
+    color: gray;
+}
