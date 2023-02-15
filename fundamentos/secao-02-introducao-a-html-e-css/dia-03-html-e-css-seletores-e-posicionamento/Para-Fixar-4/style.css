@@ -3,15 +3,16 @@ div:hover {
 }
 
 div:nth-of-type(1) {
-    background-color: aquamarine;
+    background-color: darkblue;
 }
 
 div:nth-of-type(2) {
-    background-color: cornflowerblue;
+    background-color: darkgoldenrod;
 }
 
 div:nth-of-type(3) {
     background-color: darkgreen;
+    height: 100px;
 }
 
 div:nth-of-type(4) {
@@ -19,6 +20,44 @@ div:nth-of-type(4) {
 }
 
 div:nth-of-type(5) {
-    background-color: darksalmon;
+    background-color: rgb(184, 123, 103);
 }
 
+div:nth-of-type(1) > h3 {
+    color: lightblue;
+    text-decoration: underline;
+    font-size: 30px;
+    font-family: Verdana;
+}
+
+div:nth-of-type(2) > h3 {
+    color: lightgoldenrodyellow;
+    text-decoration:dashed;
+    font-size: 20px;
+    font-family: monospace;
+}
+
+div:nth-of-type(3) > h3 {
+    color: lightgreen;
+    text-decoration:line-through;
+    font-size: 35px;
+    font-family: sans-serif;
+}
+
+div:nth-of-type(4) > h3 {
+    color: lightcyan;
+    text-decoration:overline;
+    font-size: 25px;
+    font-family: Helvetica;
+}
+
+div:nth-of-type(5) > h3 {
+    color: lightsalmon;
+    text-decoration:wavy;
+    font-size: 2em;
+    font-family: Arial;
+}
+
+div:nth-child(odd) h3 {
+    font-style: italic;
+}
