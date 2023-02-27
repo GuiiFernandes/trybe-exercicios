@@ -6,7 +6,7 @@ if (grade >= 80 && grade <= 100) {
 else if (grade >= 60 && grade < 80) {
   console.log("Você está na nossa lista de espera.");
 }
-else if (grade > 0 && grade < 60) {
+else if (grade >= 1 && grade < 60) {
   console.log("Infelizmente, você reprovou.");
 }
 else {
