@@ -143,3 +143,35 @@ if ((cost < 0 && typeof(cost) !== 'number') || (price < 0 && typeof(price) !== '
   let profit = price - totalCost;
   console.log(`O lucro com a venda de mil unidades é de ${profit * 1000} dinheiros.`);
 }
+
+//11.
+let salary = 5000;
+let taxableSalary;
+let netSalary;
+
+if (salary < 0 && typeof(salary) !== 'number') {
+  console.log('Erro, valor(es) inválido(os) ou negativo(os)!');
+} else {
+  if (salary <= 1556.94) {
+    taxableSalary = salary * (1 - 0.08);
+  } else if (salary <= 2594.92) {
+    taxableSalary = salary * (1 - 0.09);
+  } else if (salary <= 5189.82) {
+    taxableSalary = salary * (1 - 0.11);
+  } else {
+    taxableSalary = salary - 570.88;
+  }
+
+  if (taxableSalary > 4664.68) {
+    netSalary = taxableSalary - ((taxableSalary * 0.275)-869.36)
+  } else if (taxableSalary >= 3751.06) {
+    netSalary = taxableSalary - ((taxableSalary * 0.225)-636.13)
+  } else if (taxableSalary >= 2826.66) {
+    netSalary = taxableSalary - ((taxableSalary * 0.15)-354.8)
+  } else if (taxableSalary >= 1903.99) {
+    netSalary = taxableSalary - ((taxableSalary * 0.075)-142.8)
+  } else {
+    netSalary = taxableSalary;
+  }
+  console.log(`O salário líquido é de R$${netSalary}`);
+}
