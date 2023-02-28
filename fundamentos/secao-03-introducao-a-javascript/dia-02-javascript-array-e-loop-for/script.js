@@ -34,3 +34,11 @@ console.log(average > 20 ? '4. Valor maior que 20' : '4. Valor menor ou igual a 
 console.log(`5. Maior núemro do array: ${biggerNum}`);
 console.log(average > 20 ? `6. Quantida de ímpares: ${numOfOdd}` : '6. Nenhum valor ímpar encontrado');
 console.log(`7. Menor núemro do array: ${smallerNum}`);
+
+//8.
+let countNumbers = [];
+for (let counter = 1; counter <= 25; counter += 1) {
+  countNumbers.push(counter);
+  
+}
+console.log('8.', countNumbers);
