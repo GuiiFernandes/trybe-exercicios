@@ -32,7 +32,7 @@ console.log(`3. Média dos valores do array: ${average}`);
 //4.
 console.log(average > 20 ? '4. Valor maior que 20' : '4. Valor menor ou igual a 20');
 console.log(`5. Maior núemro do array: ${biggerNum}`);
-console.log(average > 20 ? `6. Quantida de ímpares: ${numOfOdd}` : '6. Nenhum valor ímpar encontrado');
+console.log(numOfOdd > 0 ? `6. Quantida de ímpares: ${numOfOdd}` : '6. Nenhum valor ímpar encontrado');
 console.log(`7. Menor núemro do array: ${smallerNum}`);
 
 //8.
