@@ -42,3 +42,21 @@ if (d > 0) {
 } else {
   console.log('zero');
 }
+
+//5. EXERCÍCIO DO DIA
+let angleA = 60;
+let angleB = 90;
+let angleC = 15;
+
+let sumAngle = angleA + angleB + angleC;
+let allAnglePositive = angleA > 0 && angleB > 0 && angleC > 0;
+
+if (allAnglePositive) {
+  if ( sumAngle === 180) {
+    console.log(true);
+  } else {
+    console.log(false);
+  }
+} else {
+  console.log('Existe ângulo(s) com valor(es) negativo(os)!');
+}
