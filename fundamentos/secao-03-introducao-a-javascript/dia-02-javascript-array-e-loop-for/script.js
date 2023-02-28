@@ -49,3 +49,10 @@ for (let num of countNumbers) {
   console.log(num / 2);
 }
 console.log(']');
+
+//10.
+let factorial = 10;
+for (let num = factorial-1; num >= 1; num -= 1) {
+  factorial *= (num);
+}
+console.log(factorial);
