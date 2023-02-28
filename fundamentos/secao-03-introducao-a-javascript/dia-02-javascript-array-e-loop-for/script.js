@@ -42,3 +42,10 @@ for (let counter = 1; counter <= 25; counter += 1) {
   
 }
 console.log('8.', countNumbers);
+
+//9.
+console.log('9. Números divididos por 2: [');
+for (let num of countNumbers) {
+  console.log(num / 2);
+}
+console.log(']');
