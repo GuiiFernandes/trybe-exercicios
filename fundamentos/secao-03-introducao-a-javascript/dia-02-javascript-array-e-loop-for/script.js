@@ -11,3 +11,6 @@ for (let index = 0; index < numbers.length; index += 1) {
 console.log(']');
 
 console.log(`2. Soma dos valores do array: ${sum}`);
+//3.
+let average = sum/numbers.length
+console.log(`3. Média dos valores do array: ${average}`);
