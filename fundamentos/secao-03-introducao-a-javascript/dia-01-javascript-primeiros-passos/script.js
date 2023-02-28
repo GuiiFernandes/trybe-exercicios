@@ -1,4 +1,4 @@
-//1. EXERCÍCIO DO DIA
+//1.
 let a = 5;
 let b = 10;
 
@@ -8,7 +8,7 @@ console.log(`Multiplicação :${a * b}`);
 console.log(`Divisão :${a / b}`);
 console.log(`Módulo :${a % b}`);
 
-//2. EXERCÍCIO DO DIA
+//2.
 let maior;
 
 if (a > b) {
@@ -19,7 +19,7 @@ if (a > b) {
 
 console.log(`O maior é ${maior}`);
 
-//3. EXERCÍCIO DO DIA
+//3.
  let c = 40;
 
 if (a > b && a > c) {
@@ -32,7 +32,7 @@ if (a > b && a > c) {
 
 console.log(`O maior é ${maior}`);
 
-//4. EXERCÍCIO DO DIA
+//4.
 let d = -10;
 
 if (d > 0) {
@@ -43,7 +43,7 @@ if (d > 0) {
   console.log('zero');
 }
 
-//5. EXERCÍCIO DO DIA
+//5.
 let angleA = 60;
 let angleB = 90;
 let angleC = 15;
@@ -61,7 +61,7 @@ if (allAnglePositive) {
   console.log('Existe ângulo(s) com valor(es) negativo(os)!');
 }
 
-//6. EXERCÍCIO DO DIA
+//6.
 let part = 'xablau';
 let move;
 
@@ -90,3 +90,26 @@ switch (part.toLowerCase()) {
 }
 
 move === false ? console.log('Erro, peça inválida!') : console.log(`${part} move-se ${move}`);
+
+//7.
+let gradePercent = 70;
+let gradeLetter;
+
+if (gradePercent < 0 || gradePercent > 100 || typeof(gradePercent) !== 'number') {
+  console.log('Erro, nota inválida!');
+} else {
+  if (gradePercent >=90) {
+    gradeLetter = 'A';
+  } else if (gradePercent >=80) {
+    gradeLetter = 'B';
+  } else if (gradePercent >=70) {
+    gradeLetter = 'C';
+  } else if (gradePercent >=60) {
+    gradeLetter = 'D';
+  } else if (gradePercent >=50) {
+    gradeLetter = 'E';
+  } else if (gradePercent < 50) {
+    gradeLetter = 'F';
+  }
+  console.log(gradeLetter);
+}
