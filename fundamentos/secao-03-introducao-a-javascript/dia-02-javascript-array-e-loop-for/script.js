@@ -56,3 +56,11 @@ for (let num = factorial-1; num >= 1; num -= 1) {
   factorial *= (num);
 }
 console.log(factorial);
+
+//11.
+let word = 'tryber';
+let invertedWord = '';
+for (let index = (word.length-1); index >= 0; index -= 1) {
+  invertedWord += word[index];
+}
+console.log(invertedWord);
