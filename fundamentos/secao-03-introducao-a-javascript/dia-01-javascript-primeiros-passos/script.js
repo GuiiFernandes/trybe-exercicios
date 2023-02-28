@@ -119,18 +119,20 @@ let num1 = 3;
 let num2 = 10;
 let num3 = 17;
 
+let isEven = false;
+
 if (num1 % 2 === 0 || num2 % 2 === 0 || num3 % 2 === 0) {
-  console.log(true);
-} else {
-  console.log(false);
+  isEven = true;
 }
+console.log(isEven);
 
 //9.
+let isOdd = false;
+
 if (num1 % 2 !== 0 || num2 % 2 !== 0 || num3 % 2 !== 0) {
-  console.log(true);
-} else {
-  console.log(false);
+  isOdd = true;
 }
+console.log(isOdd);
 
 //10.
 let cost = 100;
@@ -140,8 +142,8 @@ if ((cost < 0 && typeof(cost) !== 'number') || (price < 0 && typeof(price) !== '
   console.log('Erro, valor(es) inválido(os) ou negativo(os)!');
 } else {
   let totalCost = cost * 1.2;
-  let profit = price - totalCost;
-  console.log(`O lucro com a venda de mil unidades é de ${profit * 1000} dinheiros.`);
+  let totalProfit = (price - totalCost) * 1000;
+  console.log(`O lucro com a venda de mil unidades é de ${totalProfit} dinheiros.`);
 }
 
 //11.
