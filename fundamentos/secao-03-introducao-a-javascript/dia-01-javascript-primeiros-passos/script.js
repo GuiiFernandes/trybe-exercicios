@@ -31,3 +31,14 @@ if (a > b && a > c) {
 }
 
 console.log(`O maior é ${maior}`);
+
+//4. EXERCÍCIO DO DIA
+let d = -10;
+
+if (d > 0) {
+  console.log('positive');
+} else if (d < 0) {
+  console.log('negative');
+} else {
+  console.log('zero');
+}
