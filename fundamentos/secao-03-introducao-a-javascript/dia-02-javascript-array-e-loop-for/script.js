@@ -1,8 +1,8 @@
 let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
 let sum = 0;
-let biggerNum = null;
+let biggerNum = numbers[0];
 let numOfOdd = 0;
-let smallerNum;
+let smallerNum = numbers[0];
 
 //1.
 console.log('1. Valores do array: [');
@@ -19,7 +19,7 @@ for (let index = 0; index < numbers.length; index += 1) {
     numOfOdd += 1;
   }
   //7.
-  if (numbers[index] < smallerNum || smallerNum === undefined) {
+  if (numbers[index] < smallerNum) {
     smallerNum = numbers[index];
   }
 }
