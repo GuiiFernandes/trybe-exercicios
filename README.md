@@ -8,23 +8,23 @@ O programa de estudos da Trybe conta com mais de 1.500 horas de aulas presenciai
 
 ##### Bloco 1: Unix, Shell & Git
 
-- [✅] 1-1: _Unix & Shell_
-- [✅] 1-2: _Git - O que é e para que serve_
-- [✅] 1-3: _Git & GitHub - Entendendo os comandos_
+- [X] 1-1: _Unix & Shell_
+- [X] 1-2: _Git - O que é e para que serve_
+- [X] 1-3: _Git & GitHub - Entendendo os comandos_
 
 ##### Bloco 2: Introdução à HTML & CSS ✅
 
-- [✅] 2-1: _Estruturas de página_
-- [✅] 2-2: _Primeiros passos em CSS_
-- [✅] 2-3: _Seletores e posicionamento_
-- [✅] 2-4: _HTML Semântico_
+- [X] 2-1: _Estruturas de página_
+- [X] 2-2: _Primeiros passos em CSS_
+- [X] 2-3: _Seletores e posicionamento_
+- [X] 2-4: _HTML Semântico_
 
-##### Bloco 3: Introdução à JavaScript
+##### Bloco 3: Introdução à JavaScript ⏳
 
-- [✅] 2-1: _Primeiros passos_
-- [  ] 2-2: _Array e loop For_
-- [  ] 2-3: _Funções_
-- [  ] 2-4: _Objetos_
-- [  ] 2-5: _JavaScript ES6 - let, const, arrow functions e template literals_
+- [X] 2-1: _Primeiros passos_
+- [X] 2-2: _Array e loop For_
+- [ ] 2-3: _Funções_
+- [ ] 2-4: _Objetos_
+- [ ] 2-5: _JavaScript ES6 - let, const, arrow functions e template literals_
 
 [continue]

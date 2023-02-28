@@ -20,7 +20,7 @@ if (a > b) {
 console.log(`O maior é ${maior}`);
 
 //3.
- let c = 40;
+let c = 40;
 
 if (a > b && a > c) {
   maior = a;
