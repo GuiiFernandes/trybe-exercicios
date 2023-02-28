@@ -60,3 +60,33 @@ if (allAnglePositive) {
 } else {
   console.log('Existe ângulo(s) com valor(es) negativo(os)!');
 }
+
+//6. EXERCÍCIO DO DIA
+let part = 'xablau';
+let move;
+
+switch (part.toLowerCase()) {
+  case 'peão':
+    move = 'uma casa pra frente (duas no primeiro movimento).';
+    break;
+  case 'bispo':
+    move = 'diagonais livres.';
+    break;
+  case 'torre':
+    move = 'vertical e horizontal por todas as casas não ocupadas.';
+    break;
+  case 'cavalo':
+    move = 'duas casas horizontal ou vertical e uma casa a mais em um ângulo reto (única peça que pula outras).';
+    break;
+  case 'rainha':
+    move = 'na horizontal, vertical ou Diagonais livres.';
+    break;
+  case 'rei':
+    move = 'para qualquer casa adjascente.';
+    break;
+  default:
+    move = false;
+    break;
+}
+
+move === false ? console.log('Erro, peça inválida!') : console.log(`${part} move-se ${move}`);
