@@ -131,3 +131,15 @@ if (num1 % 2 !== 0 || num2 % 2 !== 0 || num3 % 2 !== 0) {
 } else {
   console.log(false);
 }
+
+//10.
+let cost = 100;
+let price = 200;
+
+if ((cost < 0 && typeof(cost) !== 'number') || (price < 0 && typeof(price) !== 'number')) {
+  console.log('Erro, valor(es) inválido(os) ou negativo(os)!');
+} else {
+  let totalCost = cost * 1.2;
+  let profit = price - totalCost;
+  console.log(`O lucro com a venda de mil unidades é de ${profit * 1000} dinheiros.`);
+}
