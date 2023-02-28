@@ -52,15 +52,32 @@ console.log(']');
 
 //10.
 let factorial = 10;
+
 for (let num = factorial-1; num >= 1; num -= 1) {
   factorial *= (num);
 }
-console.log(factorial);
+console.log('10. Fatorial de 10:', factorial);
 
 //11.
-let word = 'tryber';
+let word = 'Guilherme';
 let invertedWord = '';
+
 for (let index = (word.length-1); index >= 0; index -= 1) {
   invertedWord += word[index];
 }
-console.log(invertedWord);
+console.log('11. Palavra invertida:',invertedWord);
+
+//12.
+let array = ['java', 'javascript', 'python', 'html', 'css'];
+let biggerWord = '';
+let smallerWord = '';
+
+for (let word of array) {
+  if (word.length > biggerWord.length) {
+    biggerWord = word;
+  }
+  if (word.length < smallerWord.length || array.indexOf(word) === 0) {
+    smallerWord = word;
+  }
+}
+console.log(`12. Maior palavra: ${biggerWord}, menor palavra: ${smallerWord}`);
