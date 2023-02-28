@@ -14,3 +14,5 @@ console.log(`2. Soma dos valores do array: ${sum}`);
 //3.
 let average = sum/numbers.length
 console.log(`3. Média dos valores do array: ${average}`);
+//4.
+console.log(average > 20 ? '4. Valor maior que 20' : '4. Valor menor ou igual a 20');
