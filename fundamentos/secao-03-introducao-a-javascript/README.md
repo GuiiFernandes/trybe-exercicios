@@ -1,6 +1,6 @@
 # INTRODUÇÃO À JAVASCRIPT
 
-Esse bloco pertence ao módulo de `fundamentos` do curso da [Trybe](https://www.betrybe.com/).
+Esse bloco pertence ao módulo de `fundamentos` do curso da [Trybe](https://www.betrybe.com/). Nesse bloco aprendi sobre os principais fundamentos de `JavaScript`. Aprendi como declarar, criar e quais os tipos de variáveis, sobre os operadores aritméticos e lógicos, sobre estruturas condicionais a fim de criar automações em aplicações web.
 
 [A_Produzir!]
 
