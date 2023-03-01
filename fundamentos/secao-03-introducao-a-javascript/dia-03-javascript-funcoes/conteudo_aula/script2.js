@@ -15,6 +15,9 @@ console.log(clientesTrybeBank);
 
 function deleteClient (clientName) {
   if (typeof(clientName) === 'string') {
+    if (!clientesTrybeBank.includes(clientName)) {
+      return `Cliente não encontrada(o).`;
+    }
     clientesTrybeBank.splice(clientesTrybeBank.indexOf(clientName), 1);
     return `Cliente removido com sucesso!`;
   } else {
@@ -24,4 +27,5 @@ function deleteClient (clientName) {
 
 console.log(deleteClient('John'));
 console.log(deleteClient(352));
+console.log(deleteClient('Carlos Emanuel Menezes'));
 console.log(clientesTrybeBank);
