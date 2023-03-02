@@ -94,3 +94,22 @@ for (index = 1; index <= 3; index += 1) {
   countRight += 1;
   console.log(linha);
 }
+
+console.log(' ');
+//8.
+n = 7;
+countLeft = 4;
+countRight = 4;
+for (index = 1; index <= 4; index += 1) {
+  linha = '';
+  for (secondIndex = 1; secondIndex <= n; secondIndex += 1) {
+    if (secondIndex === countLeft || secondIndex === countRight || index === 4) {
+      linha += '*';
+    } else {
+      linha += ' ';
+    }
+  }
+  countLeft -= 1;
+  countRight += 1;
+  console.log(linha);
+}
