@@ -9,7 +9,6 @@ for (let index = 0; index < numbers.length; index += 1) {
     }
   }
 }
-
 console.log(numbers);
 
 //2.
@@ -23,5 +22,15 @@ for (let index = 0; index < numbers.length; index += 1) {
     }
   }
 }
-
 console.log(numbers);
+
+//4.
+let n = 5;
+let linha;
+for (index = 1; index <= n; index += 1) {
+  linha='';
+  for (secondIndex = 1; secondIndex <= n; secondIndex += 1) {
+    linha += '*';
+  }
+  console.log(linha);
+}
