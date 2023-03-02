@@ -48,13 +48,30 @@ for (index = 1; index <= n; index += 1) {
   console.log(linha);
 }
 
+console.log(' ');
 //5.
-let n = 5;
-let linha;
+n = 5;
 for (index = 1; index <= n; index += 1) {
   linha='';
   for (secondIndex = 1; secondIndex <= index; secondIndex += 1) {
     linha += '*';
   }
+  console.log(linha);
+}
+
+console.log(' ');
+//6.
+let n = 5;
+let cont = 5;
+for (index = 1; index <= n; index += 1) {
+  linha='';
+  for (secondIndex = 1; secondIndex <= n; secondIndex += 1) {
+    if (secondIndex >= cont) {
+      linha += '*';
+    } else {
+      linha += ' ';
+    }
+  }
+  cont -= 1;
   console.log(linha);
 }
