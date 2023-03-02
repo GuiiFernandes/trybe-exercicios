@@ -47,7 +47,11 @@ function customerInfo(order) {
 customerInfo(order);
 
 function orderModifier(order) {
-  // Adicione abaixo as informações necessárias.
+  let client = order.name;
+  let pizzas = Object.keys(order.order.pizza);
+  let drink = order.order.drinks.type;
+  let total = order.payment.total.toFixed(2);
+  console.log(`Olá, ${client}, o valor total de seu pedido de ${pizzas[0]}, ${pizzas[1]} e ${drink} é R$${total}.`);
 }
 
 orderModifier(order);
