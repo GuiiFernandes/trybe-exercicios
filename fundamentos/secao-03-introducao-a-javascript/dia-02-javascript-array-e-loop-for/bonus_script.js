@@ -113,3 +113,18 @@ for (index = 1; index <= 4; index += 1) {
   countRight += 1;
   console.log(linha);
 }
+
+//9.
+let numAnalyzed = 7;
+let isPrime = true;
+for (let index = 2; index <= numAnalyzed - 1; index += 1) {
+  if (numAnalyzed % index === 0) {
+    isPrime = false;
+    break;
+  }
+}
+if (isPrime) {
+  console.log(`O número ${numAnalyzed} é primo.`);
+} else {
+  console.log(`O número ${numAnalyzed} não é primo.`);
+}
