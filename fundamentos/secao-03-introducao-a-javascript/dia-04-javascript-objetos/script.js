@@ -9,3 +9,8 @@ console.log(`Bem-Vinda, ${info.personagem}!`);
 //2.
 info['recorrente'] = 'Sim';
 console.log(info);
+
+//3.
+for (let key in info) {
+  console.log(key);
+}
