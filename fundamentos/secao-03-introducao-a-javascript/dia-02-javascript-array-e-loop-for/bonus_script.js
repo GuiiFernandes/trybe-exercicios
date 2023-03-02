@@ -61,7 +61,7 @@ for (index = 1; index <= n; index += 1) {
 
 console.log(' ');
 //6.
-let n = 5;
+n = 5;
 let cont = 5;
 for (index = 1; index <= n; index += 1) {
   linha='';
@@ -73,5 +73,24 @@ for (index = 1; index <= n; index += 1) {
     }
   }
   cont -= 1;
+  console.log(linha);
+}
+
+console.log(' ');
+//7.
+n = 5;
+let countLeft = 3;
+let countRight = 3;
+for (index = 1; index <= 3; index += 1) {
+  linha = '';
+  for (secondIndex = 1; secondIndex <= n; secondIndex += 1) {
+    if (secondIndex >= countLeft && secondIndex <= countRight) {
+      linha += '*';
+    } else {
+      linha += ' ';
+    }
+  }
+  countLeft -= 1;
+  countRight += 1;
   console.log(linha);
 }
