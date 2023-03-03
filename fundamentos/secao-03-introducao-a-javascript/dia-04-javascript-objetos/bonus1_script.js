@@ -37,3 +37,9 @@ function tamanhoObjeto (object) {
   return listaKeys(object).length;
 }
 console.log(tamanhoObjeto(lesson3));
+
+//4.
+function listaValores (object) {
+  return Object.values(object);
+}
+console.log(listaValores(lesson2));
