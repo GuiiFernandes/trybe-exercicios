@@ -102,4 +102,11 @@ let moradores = {
   ],
 };
 const blocoDois = moradores.blocoDois;
+const blocoUm = moradores.blocoUm;
 console.log(`O morador do bloco 2 de nome ${blocoDois[blocoDois.length - 1].nome} ${blocoDois[blocoDois.length - 1].sobrenome} mora no ${blocoDois[blocoDois.length - 1].andar}° andar, apartamento ${blocoDois[blocoDois.length - 1].apartamento}`);
+for(let morador of blocoUm) {
+  console.log(`${morador.nome} ${morador.sobrenome}`);
+}
+for(let morador of blocoDois) {
+  console.log(`${morador.nome} ${morador.sobrenome}`);
+}
