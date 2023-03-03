@@ -19,9 +19,14 @@ function convertNumber (romeNum) {
 console.log(convertNumber('IX'), convertNumber('XI'), convertNumber('LXXVIII'), convertNumber('LXIII'));
 
 //2.
-// let vector = [[1, 2], [3,4,5,6], [7,8,9,10]];
-// function arrayofNumbers (vector) {
-//   for (let secondVector of vector) {
-//     if()
-//   }
-// }
+let vector = [[1, 2], [3,4,5,6], [7,8,9,10]];
+function arrayofNumbers (vector) {
+  const evenNumbers = [];
+  for (let secondVector of vector) {
+    for (let num of secondVector) {
+      num % 2 === 0 && evenNumbers.push(num);
+    }
+  }
+  return evenNumbers;
+}
+console.log(arrayofNumbers(vector));
