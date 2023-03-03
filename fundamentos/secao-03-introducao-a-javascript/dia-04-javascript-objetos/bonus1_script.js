@@ -51,3 +51,13 @@ let allLessons = Object.assign({}, {
     lesson3: lesson3
   });
 console.log(allLessons);
+
+//6.
+function totalEstudantes (object) {
+  let sum = 0;
+  for(let key in allLessons) {
+    sum += allLessons[key].numeroEstudantes;
+  }
+  return sum;
+}
+console.log(totalEstudantes(allLessons));
