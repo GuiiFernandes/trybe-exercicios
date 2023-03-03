@@ -11,13 +11,17 @@ function convertNumber (romeNum) {
   }
   let result = 0;
   for (let index = 0; index < romeNum.length; index += 1) {
-    if (romeNumbers[romeNum[index]] >= romeNumbers[romeNum[index + 1]] || romeNum[index + 1] === undefined) {
-      result += romeNumbers[romeNum[index]];
-    } else {
-      result -= romeNumbers[romeNum[index]];
-    };
+    romeNumbers[romeNum[index]] >= romeNumbers[romeNum[index + 1]] || romeNum[index + 1] === undefined ? result += romeNumbers[romeNum[index]] : result -= romeNumbers[romeNum[index]];
   }
   return result
 }
 
 console.log(convertNumber('IX'), convertNumber('XI'), convertNumber('LXXVIII'), convertNumber('LXIII'));
+
+//2.
+// let vector = [[1, 2], [3,4,5,6], [7,8,9,10]];
+// function arrayofNumbers (vector) {
+//   for (let secondVector of vector) {
+//     if()
+//   }
+// }
