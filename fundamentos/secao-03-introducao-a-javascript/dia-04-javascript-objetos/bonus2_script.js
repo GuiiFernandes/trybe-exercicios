@@ -69,3 +69,37 @@ for (let key in basketObj) {
 result = result.slice(0, -1);
 result += `.`;
 console.log(result);
+
+//4.
+let moradores = {
+  blocoUm: [
+    {
+      nome: 'Luíza',
+      sobrenome: 'Guimarães',
+      andar: 10,
+      apartamento: 1005,
+    },
+    {
+      nome: 'William',
+      sobrenome: 'Albuquerque',
+      andar: 5,
+      apartamento: 502,
+    },
+  ],
+  blocoDois: [
+    {
+      nome: 'Murilo',
+      sobrenome: 'Ferraz',
+      andar: 8,
+      apartamento: 804,
+    },
+    {
+      nome: 'Zoey',
+      sobrenome: 'Brooks',
+      andar: 1,
+      apartamento: 101,
+    },
+  ],
+};
+const blocoDois = moradores.blocoDois;
+console.log(`O morador do bloco 2 de nome ${blocoDois[blocoDois.length - 1].nome} ${blocoDois[blocoDois.length - 1].sobrenome} mora no ${blocoDois[blocoDois.length - 1].andar}° andar, apartamento ${blocoDois[blocoDois.length - 1].apartamento}`);
