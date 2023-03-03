@@ -23,8 +23,8 @@ O programa de estudos da Trybe conta com mais de 1.500 horas de aulas presenciai
 
 - [X] 2-1: _Primeiros passos_
 - [X] 2-2: _Array e loop For_
-- [ ] 2-3: _Funções_
-- [ ] 2-4: _Objetos_
-- [ ] 2-5: _JavaScript ES6 - let, const, arrow functions e template literals_
+- [X] 2-3: _Funções_
+- [X] 2-4: _Objetos_
+- [X] 2-5: _JavaScript ES6 - let, const, arrow functions e template literals_
 
 [continue]
