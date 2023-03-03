@@ -55,7 +55,7 @@ console.log(allLessons);
 //6.
 function totalEstudantes (object) {
   let sum = 0;
-  for(let key in allLessons) {
+  for(let key in object) {
     sum += allLessons[key].numeroEstudantes;
   }
   return sum;
@@ -66,5 +66,14 @@ console.log(totalEstudantes(allLessons));
 function obtemValor (object, number) {
   return Object.values(object)[number];
 }
-
 console.log(obtemValor(lesson1, 0));
+
+//8.
+function verifyPair(object, key, value) {
+  for(let secondKey in object) {
+    if (key === secondKey && object[secondKey] === value) return true;
+  }
+  return false;
+}
+console.log(verifyPair(lesson3, 'turno', 'noite'));
+console.log(verifyPair(lesson3, 'materia', 'Maria Clara'));
