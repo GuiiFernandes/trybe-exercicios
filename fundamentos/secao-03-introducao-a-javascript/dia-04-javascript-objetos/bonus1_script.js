@@ -61,3 +61,10 @@ function totalEstudantes (object) {
   return sum;
 }
 console.log(totalEstudantes(allLessons));
+
+//7.
+function obtemValor (object, number) {
+  return Object.values(object)[number];
+}
+
+console.log(obtemValor(lesson1, 0));
