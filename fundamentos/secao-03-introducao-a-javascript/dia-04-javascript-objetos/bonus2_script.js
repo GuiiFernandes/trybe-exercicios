@@ -131,11 +131,28 @@ let allLessons = {
     turno: 'noite',
   }
 };
-function countMathStudent (allLessons) {
+function countMathStudent (object) {
   let sumStudents = 0;
-  for (let key in allLessons) {
-    if (allLessons[key].materia === 'Matemática') sumStudents += allLessons[key].numeroEstudantes;
+  for (let key in object) {
+    if (object[key].materia === 'Matemática') sumStudents += object[key].numeroEstudantes;
   }
   return sumStudents;
 }
 console.log(`${countMathStudent(allLessons)} alunos assistiram a aula de Matemática.`);
+
+function createReport (object, teacher) {
+  let classes = [];
+  let sumStudents = 0;
+  for (let key in object) {
+    if (object[key].professor === teacher) {
+      classes.push(object[key].materia)
+      sumStudents += object[key].numeroEstudantes;
+    };
+  }
+  return {
+    professor: teacher,
+    aulas: classes,
+    estudantes: sumStudents
+  };
+}
+console.log(createReport(allLessons, 'Maria Clara'));
