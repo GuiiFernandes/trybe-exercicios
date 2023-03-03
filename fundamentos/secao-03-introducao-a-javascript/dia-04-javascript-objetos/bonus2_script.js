@@ -110,3 +110,32 @@ for(let morador of blocoUm) {
 for(let morador of blocoDois) {
   console.log(`${morador.nome} ${morador.sobrenome}`);
 }
+
+//5.
+let allLessons = {
+  lesson1: {
+    materia: 'Matemática',
+    numeroEstudantes: 20,
+    professor: 'Maria Clara',
+    turno: 'manhã',
+  },
+  lesson2: {
+    materia: 'História',
+    numeroEstudantes: 20,
+    professor: 'Carlos',
+  },
+  lesson3: {
+    materia: 'Matemática',
+    numeroEstudantes: 10,
+    professor: 'Maria Clara',
+    turno: 'noite',
+  }
+};
+function countMathStudent (allLessons) {
+  let sumStudents = 0;
+  for (let key in allLessons) {
+    if (allLessons[key].materia === 'Matemática') sumStudents += allLessons[key].numeroEstudantes;
+  }
+  return sumStudents;
+}
+console.log(`${countMathStudent(allLessons)} alunos assistiram a aula de Matemática.`);
