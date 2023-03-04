@@ -62,3 +62,11 @@ function soma(a,b) {
 let a = 3;
 let b = 5;
 console.log(`O resultado da soma de ${a} + ${b} é: ${soma(a,b)}`);
+
+//PT1-5. Modifique a estrutura das funções a seguir para que elas sejam arrow functions.
+// function numeroAleatorio() {
+//   return Math.random()
+// }
+// console.log(numeroAleatorio());
+let random = () => Math.random();
+console.log(random());
