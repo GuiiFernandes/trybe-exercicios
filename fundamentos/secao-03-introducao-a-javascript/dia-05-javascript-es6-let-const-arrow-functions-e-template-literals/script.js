@@ -68,5 +68,15 @@ console.log(`O resultado da soma de ${a} + ${b} é: ${soma(a,b)}`);
 //   return Math.random()
 // }
 // console.log(numeroAleatorio());
-let random = () => Math.random();
-console.log(random());
+const numeroAleatorio = () => Math.random();
+console.log(numeroAleatorio());
+
+//PT1-6. Transforme a função hello em uma arrow function.
+// function hello(nome) {
+//   return `Olá, ${nome}!`
+// }
+// let nome = 'Ivan';
+// console.log(hello(nome));
+const hello = (nome) => `Olá, ${nome}!`;
+let nome = 'Ivan';
+console.log(hello(nome));
