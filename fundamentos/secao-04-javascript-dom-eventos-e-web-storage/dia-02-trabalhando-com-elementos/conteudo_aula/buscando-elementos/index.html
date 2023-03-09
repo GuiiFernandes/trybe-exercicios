@@ -31,5 +31,11 @@
   const primeiroFilho = document.getElementById('pai').firstElementChild;
   //5. Agora acesse o primeiroFilho a partir de elementoOndeVoceEsta.
   const primeiroFilho2 = ondeEstou.previousElementSibling;
+  //6. Agora acesse o texto Atenção! a partir de elementoOndeVoceEsta.
+  const atencao = ondeEstou.nextSibling;
+  //7. Agora acesse o terceiroFilho a partir de elementoOndeVoceEsta.
+  const terceiroFilho = ondeEstou.nextElementSibling;
+  //8. Agora acesse o terceiroFilho a partir de pai.
+  const terceiroFilho2 = document.getElementById('pai').children[2];
 </script>
 </html>
