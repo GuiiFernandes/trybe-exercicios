@@ -118,7 +118,13 @@
       //10. Adicione a classe title na tag h1 criada;
       const h1 = document.getElementsByTagName('h1')[0];
       h1.className = 'title';
+      
       //11. Adicione a classe description nas 3 tags h3 criadas;
+      const h3s = document.getElementsByTagName('h3');
+      for (let h3 of h3s) {
+        h3.className = 'description';
+      }
+
       //12. Remova a section criada no passo 5 (aquele que possui a classe left-content). Utilize a função .removeChild();
       //13. Centralize a section criada no passo 6 (aquele que possui a classe right-content).
       
