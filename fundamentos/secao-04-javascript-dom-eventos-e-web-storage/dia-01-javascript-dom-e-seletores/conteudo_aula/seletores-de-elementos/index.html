@@ -18,6 +18,11 @@
       secondparagraph.innerText = 'Uma série de 3 filmes de mais de 3 horas cada!';
       //3. Por fim, recupere o subtítulo e altere-o também.
       document.getElementById('subtitle').innerText = 'Vencedor de uma pá de oscar!';
+      //4. Adicione uma classe igual para os dois parágrafos;
+      const p = document.getElementsByTagName('p');
+      for (let text of p) {
+          text.className = 'paragraph';
+      }
     </script>
   </body>
 </html>
