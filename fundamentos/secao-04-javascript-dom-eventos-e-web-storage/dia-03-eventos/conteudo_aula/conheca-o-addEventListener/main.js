@@ -40,6 +40,10 @@ const changeText = (event) => {
 input.addEventListener('change', changeText);
 
 //4. Crie uma função que, ao clicar duas vezes em 'Meu top 3 do Spotrybefy', ele redirecione para alguma página; (Que tal redirecionar para seu portfólio?)
+const openPage = (event) => {
+  window.open('https://guiifernandes.github.io/', '_blank');
+}
+myWebpage.addEventListener('dblclick', openPage);
 
 // - Crie uma função que, ao passar o mouse sobre 'Meu top 3 do Spotrybefy', altere
 // a cor do mesmo;
