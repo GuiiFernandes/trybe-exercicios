@@ -9,18 +9,20 @@ const myWebpage = document.getElementById('my-spotrybefy');
 //1. Note que uma das caixas está um pouco acima das outras. Por que isso ocorre?
 //Pq ela é a unica li que possui a classe tech, que no css arrasta a caixa 20 pixels pra cima no eixo vertical (Y)
 
-//2. Crie uma função que adicione a classe 'tech' ao elemento `li` quando for clicado.
-//2.1. Deve existir apenas um elemento com a classe 'tech'. Como você faz isso?
+//2. Crie uma função que adicione a classe 'tech' ao elemento `li` quando for clicado. Deve existir apenas um elemento com a classe 'tech'. Como você faz isso?
 const changeTech = (event) => {
   boxs = document.querySelectorAll('.container li');
   const elementTech = document.querySelector('.tech')
   elementTech.classList.remove('tech');
   event.target.className = 'tech';
   if (event.srcElement.id === 'first-li') {
+    input.value = '';
     input.placeholder = 'Alterar a primeira tecnologia';
   } else if (event.srcElement.id === 'second-li') {
+    input.value = '';
     input.placeholder = 'Alterar a segunda tecnologia';
   } else {
+    input.value = '';
     input.placeholder = 'Alterar a terceira tecnologia';
   };
 }
@@ -28,10 +30,14 @@ firstLi.addEventListener('click', changeTech);
 secondLi.addEventListener('click', changeTech);
 thirdLi.addEventListener('click', changeTech);
 
-
-// - Crie uma função que, ao digitar na caixa de texto, altere o texto do elemento
-// com a classe 'tech';
-
+//3. Crie uma função que, ao digitar na caixa de texto, altere o texto do elemento com a classe 'tech';
+const changeText = (event) => {
+  const text = event.target.value;
+  const box = document.querySelector('.tech');
+  box.innerText = text;
+  input.value = '';
+}
+input.addEventListener('change', changeText);
 
 // - Crie uma função que, ao clicar duas vezes em 'Meu top 3 do Spotrybefy', ele
 // redirecione para alguma página;
