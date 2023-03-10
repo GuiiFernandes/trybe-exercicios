@@ -15,10 +15,11 @@ const changeTech = (event) => {
   const elementTech = document.querySelector('.tech')
   elementTech.classList.remove('tech');
   event.target.className = 'tech';
-  if (event.srcElement.id === 'first-li') {
+  console.log(event);
+  if (event.id === 'first-li') {
     input.value = '';
     input.placeholder = 'Alterar a primeira tecnologia';
-  } else if (event.srcElement.id === 'second-li') {
+  } else if (event.id === 'second-li') {
     input.value = '';
     input.placeholder = 'Alterar a segunda tecnologia';
   } else {
@@ -32,16 +33,13 @@ thirdLi.addEventListener('click', changeTech);
 
 //3. Crie uma função que, ao digitar na caixa de texto, altere o texto do elemento com a classe 'tech';
 const changeText = (event) => {
-  const text = event.target.value;
   const box = document.querySelector('.tech');
-  box.innerText = text;
+  box.innerText = event.target.value;
   input.value = '';
 }
 input.addEventListener('change', changeText);
 
-// - Crie uma função que, ao clicar duas vezes em 'Meu top 3 do Spotrybefy', ele
-// redirecione para alguma página;
-//  - Que tal redirecionar para seu portfólio?
+//4. Crie uma função que, ao clicar duas vezes em 'Meu top 3 do Spotrybefy', ele redirecione para alguma página; (Que tal redirecionar para seu portfólio?)
 
 // - Crie uma função que, ao passar o mouse sobre 'Meu top 3 do Spotrybefy', altere
 // a cor do mesmo;
