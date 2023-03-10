@@ -45,8 +45,17 @@ const openPage = (event) => {
 }
 myWebpage.addEventListener('dblclick', openPage);
 
-// - Crie uma função que, ao passar o mouse sobre 'Meu top 3 do Spotrybefy', altere
-// a cor do mesmo;
+//5. Crie uma função que, ao passar o mouse sobre 'Meu top 3 do Spotrybefy', altere a cor do mesmo;
+const styleSubTitle = (event) => {
+  if(event.target.style.color === 'orange') {
+    event.target.style.color = 'white';
+  } else {
+    event.target.style.color = 'orange';
+  };
+  event.target.style.cursor = 'pointer';
+}
+myWebpage.addEventListener('mouseover', styleSubTitle);
+myWebpage.addEventListener('mouseleave', styleSubTitle);
 
 // Segue abaixo um exemplo do uso de event.target:
 
