@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercio Conteúdo - Buscando elementos</title>
+</head>
+<body>
+  <main id="paiDoPai">
+    <section id="pai">
+      <section id="primeiroFilho"></section>
+      <section id="elementoOndeVoceEsta">
+        <section id="primeiroFilhoDoFilho"></section>
+        <section id="segundoEUltimoFilhoDoFilho"></section>
+      </section>
+      Atenção!
+      <section id="terceiroFilho"></section>
+      <section id="quartoEUltimoFilho"></section>
+    </section>
+  </main>
+</body>
+<script>
+  //1. Acesse o elemento elementoOndeVoceEsta.
+  const ondeEstou = document.getElementById('elementoOndeVoceEsta');
+  //2. Acesse pai a partir de elementoOndeVoceEsta e adicione uma color a ele.
+  ondeEstou.parentElement.style.color = 'red';
+  //3. Acesse o primeiroFilhoDoFilho e adicione um texto a ele. Você se lembra dos vídeos da aula anterior, como fazer isso?
+  const filhoFilho = document.getElementById('primeiroFilhoDoFilho').innerHTML = 'Você está sendo convocado para um processo seletivo.';
+  //4. Acesse o primeiroFilho a partir de pai.
+  const primeiroFilho = document.getElementById('pai').firstElementChild;
+  //5. Agora acesse o primeiroFilho a partir de elementoOndeVoceEsta.
+  const primeiroFilho2 = ondeEstou.previousElementSibling;
+  //6. Agora acesse o texto Atenção! a partir de elementoOndeVoceEsta.
+  const atencao = ondeEstou.nextSibling;
+  //7. Agora acesse o terceiroFilho a partir de elementoOndeVoceEsta.
+  const terceiroFilho = ondeEstou.nextElementSibling;
+  //8. Agora acesse o terceiroFilho a partir de pai.
+  const terceiroFilho2 = document.getElementById('pai').children[2];
+</script>
+</html>
