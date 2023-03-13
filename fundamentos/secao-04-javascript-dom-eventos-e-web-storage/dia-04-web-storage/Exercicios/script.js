@@ -17,3 +17,17 @@ document.addEventListener('click', (event) => {
     }
   }
 });
+
+window.onload = () => {
+  if(localStorage.length > 0) {
+    for (let key in localStorage) {
+      if (key === 'background-color') {
+        content.style[key] = localStorage[key];
+      } else {
+        for (let p of paragraphs) {
+          p.style[key] = localStorage[key];
+        }
+      }
+    }
+  }
+}
