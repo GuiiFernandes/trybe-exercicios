@@ -1,0 +1,56 @@
+html {
+  box-sizing: border-box;
+  font-size: 15px;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
+.container {
+  width: 95%;
+  margin: auto;
+}
+
+header {
+  display: flex;
+  flex-flow: column;
+}
+
+.title {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 5px 0;
+}
+
+.menu {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.menu-item {
+  padding: 3px 10px;
+}
+
+h2 {
+  margin: 5px 0;
+  font-size: 20px;
+}
+
+h1 {
+  margin: 5px 0;
+  font-size: 25px;
+}
+
+aside {
+  margin: 15px 0;
+}
+
+p {
+  padding: 5px 0;
+}
