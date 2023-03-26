@@ -54,3 +54,21 @@ aside {
 p {
   padding: 5px 0;
 }
+
+h3 {
+  font-size: 17px;
+}
+
+footer {
+  margin-top: 15px;
+  padding-bottom: 5px;
+}
+
+@media (min-width: 470px) {
+  .title {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    margin: 5px 0;
+  }  
+}
