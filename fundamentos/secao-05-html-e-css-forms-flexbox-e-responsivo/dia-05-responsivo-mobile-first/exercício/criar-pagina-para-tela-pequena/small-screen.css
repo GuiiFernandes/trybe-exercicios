@@ -1,0 +1,117 @@
+/*
+ * @see http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ * apply a natural box layout model to all elements, but allowing components to change
+ */
+ html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font: 1.6rem/1.2 Helvetica, aria, sans-serif;
+  width: 95%;
+  margin: auto;
+}
+
+h1 {
+  font-size: 2.4rem;
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+p {
+  margin: 0 0.5rem;
+  text-align: justify;
+}
+
+img {
+	max-width: 100%;
+}
+
+section {
+  display: flex;
+  flex-flow:row wrap;
+  justify-content: center;
+}
+
+figure {
+  flex-basis: 100%;
+  margin: 2rem 0;
+}
+
+figcaption {
+  font-size: 1.2rem;
+}
+
+@media (min-width: 768px) {
+  body {
+    background-color: darkgoldenrod;
+    font: 2rem/1.2 Helvetica, aria, sans-serif;
+    width: 75%;
+    margin: auto;
+  }
+
+  section {
+    width: 90%;
+    margin: auto;
+  }
+  
+  figure {
+    max-width: 46%;
+    margin: 1rem;
+  }
+
+  figcaption {
+    font-size: 1.5rem;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 992px) {
+  body {
+    background-color: darkslateblue;
+    font: 2.5rem/1.3 Helvetica, aria, sans-serif;
+    width: 70%;
+    margin: auto;
+  }
+
+  section {
+    width: 90%;
+    margin: auto;
+  }
+  
+  figure {
+    max-width: 29%;
+    margin: 1rem;
+  }
+
+  figcaption {
+    font-size: 1.5rem;
+  }
+
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  h2 {
+    font-size: 3rem;
+  }
+}
