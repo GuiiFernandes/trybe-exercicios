@@ -19,6 +19,7 @@ html {
 header {
   display: flex;
   flex-flow: column;
+  width: 100%;
 }
 
 .title {
@@ -65,10 +66,73 @@ footer {
 }
 
 @media (min-width: 470px) {
+  html {
+    font-size: 17px;
+  }
   .title {
     text-align: center;
-    font-size: 30px;
+    font-size: 27px;
     font-weight: 700;
     margin: 5px 0;
-  }  
+  }
+
+  .container {
+    width: 85%;
+  }
+
+  h3 {
+    font-size: 19px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+  
+  h1 {
+    font-size: 27px;
+  }
+}
+
+@media (min-width: 800px) {
+  html {
+    font-size: 20px;
+  }
+
+  .title {
+    text-align: center;
+    font-size: 35px;
+    font-weight: 700;
+    margin: 5px 0;
+  }
+
+  .container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    max-width: 800px;
+    margin: auto;
+  }
+
+  h3 {
+    font-size: 22px;
+  }
+
+  h2 {
+    font-size: 25px;
+  }
+  
+  h1 {
+    font-size: 30px;
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  p {
+    padding: 7px 0;
+  }
+
+  footer {
+    margin-top: 20px;
+    padding-bottom: 15px;
+  }
 }
