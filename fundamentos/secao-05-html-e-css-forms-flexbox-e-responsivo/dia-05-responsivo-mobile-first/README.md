@@ -1,70 +1,67 @@
-# Dia 04 (HTML Semântico)
+# Dia 05 (Responsivo Mobile First)
 
-Neste dia aprendi sobre o que são, como declarar e quais os tipos de variáveis, operadores aritméticos e condicionais e estruturas condicionais da linguagem `JavaScript`.
+Neste dia aprendi como utilizar media queries para mostrar um layout diferente em tamanhos de tela diferentes, aprendi também o conceito e a importância de se construir páginas "mobile first", além de testar o bootstrap para criar design de páginas responsivas.
 
-No conteúdo da Aula, criamos 6 pequenos scripts `JavaScript` que estão na pasta `Para-Fixar`.
+No conteúdo da Aula, criamos 1 pequeno código `HTML` e `CSS` que estão na pasta `conteudo-aula`.
 
 Nos exércicios localizados nessa página coloquei em prática os conhecimentos adquiridos em aula e outros adquiridos por pesquisas na Web.
 
 Os requisitos do exercício são:
+### Criar página para tela pequena
+Comece o exercício analisando a página em uma tela de tamanho pequeno, para simular como ela pode parecer em um dispositivo móvel (você pode usar o Chrome para isso, veja no detalhe aqui).
+Ao pensar no design de uma tela pequena primeiro, estamos aplicando a abordagem do mobile first. Fazendo isso, começamos com um design básico (mínimo denominador comum) e então trabalhamos em melhorias mais sofisticadas para os navegadores com funcionalidades avançadas e layouts específicos.
+Isso garante que estamos desenvolvendo uma experiência que funcionará para todos. Também tem um efeito colateral: isso também nos ajuda a perceber qual o conteúdo é realmente importante na nossa página.
+Agora você vai ajustar o CSS para melhorar a visualização da página.
+Realize as seguintes tarefas:
+1. Faça o tamanho da fonte ser maior;
+2. Faça o tamanho da fonte dos elementos h1 ser menor;
+3. Aumente o espaçamento entre as figuras;
+4. Adicione um pouco de margin na página.
+Bora mexer na responsividade do nosso site? Antes iremos determinar um padrão de tamanho para cada dispositivo.
+  > max-width: 600px: Telas de celular. (Mobile devices)
+  > min-width: 600px: iPads, Tablets
+  > min-width: 768px: Telas menores, laptops
+  > min-width: 992px: Desktops
+  > min-width: 1200px — Telas grandes, screens e TV.
+5. Agora que temos um padrão, vamos criar um breakpoint para telas menores de laptops. Para isso nós podemos consultar nossa tabela acima e utilizar o min-width: 768px e quando tivermos em telas menores que 768px esse estilo não vai ser aplicado. Esse será o primeiro breakpoint do layout. Um breakpoint é apenas um ponto onde estamos definindo que o design atual deve mudar. Ok?
+6. Crie uma media query no seu arquivo CSS, usando a dimensão em pixels que você guardou como o min-width que foi apresentado acima.
+7. Altere a cor de fundo (isso vai te ajudar a perceber quando a media query teve efeito);
+8. Ajuste o tamanho da fonte;
+9. Ajuste as margens da página;
+10. Faça as imagens serem mostradas em duas colunas.
+11. Agora, você vai criar outro breakpoint para telas grandes, como por exemplo, desktops. Para isso você pode consultar novamente nossa tabela com os tamanhos.
+12. Crie uma nova media query no seu arquivo CSS usando a dimensão para telas de desktop e realize os seguintes ajustes dentro do breakpoint (aqui podemos usar o tamanho de tela de 992px):
+  12.1. Altere a cor de fundo;
+  12.2. Ajuste o tamanho da fonte;
+  12.3. Ajuste as margens da página;
+  12.4. Adicione a propriedade max-width à página, para garantir que a largura das linhas não fique muito grande.
 
-1. Elabore alguns códigos e imprima o resultado no console usando o console.log, um para cada operação aritmética básica. Seu código deve ter duas variáveis, a e b, definidas no começo com os valores que serão operados. Escreva códigos para:
-  * Adição (a + b)
-  * Subtração (a - b)
-  * Multiplicação (a * b)
-  * Divisão (a / b)
-  * Módulo (a % b)
-2. Utilize if/else para escrever um código que retorne o maior de dois números. Defina, no começo do seu código, duas variáveis com os valores que serão comparados.
-3. Utilize if/else para escrever um código que retorne o maior de três números. Defina, no começo do seu código, três variáveis com os valores que serão comparados.
-4. Utilize if/else para escrever um código que, dado um valor recebido como parâmetro, retorne: “positive”, se esse valor for positivo; “negative”, se esse valor for negativo, e “zero”, caso esse valor não seja nem positivo nem negativo.
-5. Utilize if/else para escrever um código que defina três variaveis com os valores dos três ângulos internos de um triângulo. Retorne true se os ângulos representarem os ângulos de um triângulo e false, caso contrário. Se algum ângulo for inválido, você deve retornar uma mensagem de erro.
-  * Para os ângulos serem de um triângulo válido, a soma dos três deve ser 180 graus.
-  * Um ângulo será considerado inválido se não tiver um valor positivo.
-6. Utilize switch/case para escrever um código que receba o nome de uma peça de xadrez e retorne os movimentos que ela pode fazer.
-  * Como desafio, escreva um código para funcionar tanto se receber o nome de uma peça com letras maiúsculas quanto com letras minúsculas, sem aumentar a quantidade de condicionais.
-  * Como dica, você pode pesquisar uma função que faça uma string ficar com todas as letras minúsculas (lower case).
-  * Se a peça passada for inválida, o código deve retornar uma mensagem de erro.
-  * Exemplo: bishop (bispo) -> diagonals (diagonais)
+### Criando 3 layouts diferentes utilizando o mobile first
+Realize as seguintes tarefas:
+1. Utilizando a abordagem mobile first e media queries, crie três versões de layout diferentes para essa página. Cada layout deve corresponder a um tamanho diferente de página (pequeno, médio e grande). Faça pelo menos um commit para cada layout;
+2. Para fazer isso de forma adequada, você deve prestar atenção no conteúdo da página e pensar em como mostrá-lo em cada um dos tamanhos de tela:
+3. Onde a lista de capítulos deve estar posicionada?
+4. Como a história deve ser mostrada?
+5. Como o cabeçalho deve ser posicionado?
+6. O que fazer com as informações do autor em cada tamanho de tela?
+7. Talvez você precise alterar o HTML um pouco, adicionando elementos para facilitar a estilização, ou talvez mudando um bloco de lugar dentro da página.
 
-7. Utilize if/else para escrever um código que converta uma nota dada em porcentagem (de 0 a 100) em conceitos de A a F. Siga as seguintes regras:
-  * Porcentagem >= 90 -> A
-  * Porcentagem >= 80 -> B
-  * Porcentagem >= 70 -> C
-  * Porcentagem >= 60 -> D
-  * Porcentagem >= 50 -> E
-  * Porcentagem < 50 -> F
-  * O código deve retornar uma mensagem de erro e encerrar se a nota passada for menor que 0 ou maior que 100.
-8. Utilize if/else para escrever um código que defina três números em variáveis e retorne true se pelo menos uma das três for par. Caso contrário, o código deve retornar false.
-  * Bônus: use somente um if.
-9. Utilize if/else para escrever um código que defina três números em variáveis e retorne true se pelo menos uma das três for ímpar. Caso contrário, o código deve retornar false.
-  * Bônus: use somente um if.
-10. Utilize if/else para escrever um código que se inicie com dois valores em duas variáveis diferentes: o custo de um produto e seu valor de venda. A partir dos valores, o código deve calcular o lucro (ou seja, o valor de venda menos o custo do produto) da empresa ao vender mil produtos.
-  * Atente para o fato de que um imposto de 20% incide sobre o custo do produto.
-  * Seu código deve emitir uma mensagem de erro e encerrar caso algum dos valores de entrada seja menor que zero.
-  * O lucro de um produto é o resultado da subtração do valor de venda pelo custo e deve considerar que o imposto de 20% faz parte do valor de custo.
-  * valorCustoTotal = valorCusto + impostoSobreOCusto;
-  * lucro = valorVenda - valorCustoTotal (lucro de um produto);
-11. Utilize if/else para escrever um código que, dado um salário bruto, calcule o líquido a ser recebido. Uma pessoa que trabalha de carteira assinada no Brasil tem descontados de seu salário bruto o INSS e o IR. 
-  *A notação para um salário de R$1500,10, por exemplo, deve ser 1500.10. Para as faixas de impostos, use as seguintes referências:
-    * INSS (Instituto Nacional do Seguro Social)
-      * Salário bruto até R$ 1.556,94: alíquota de 8%
-      * Salário bruto de R$ 1.556,95 a R$ 2.594,92: alíquota de 9%
-      * Salário bruto de R$ 2.594,93 a R$ 5.189,82: alíquota de 11%
-      * Salário bruto acima de R$ 5.189,82: alíquota máxima de R$ 570,88
-    * IR (Imposto de Renda)
-      * Até R$ 1.903,98: isento de imposto de renda
-      * De R$ 1.903,99 a 2.826,65: alíquota de 7,5% e parcela de R$ 142,80 a deduzir do imposto
-      * De R$ 2.826,66 a R$ 3.751,05: alíquota de 15% e parcela de R$ 354,80 a deduzir do imposto
-      * De R$ 3.751,06 a R$ 4.664,68: alíquota de 22,5% e parcela de R$ 636,13 a deduzir do imposto
-      * Acima de R$ 4.664,68: alíquota de 27,5% e parcela de R$ 869,36 a deduzir do imposto.
-Exemplo: Uma pessoa que possui o salário bruto de R$ 3.000,00, terá como primeiro desconto referente à contribuição do INSS. O cálculo será:
-  * O salário bruto está entre R$ 2.594,93 e R$ 5.189,82, então sua alíquota para INSS é de 11%. O INSS será 11% de R$ 3.000, ou seja, R$ 330,00.
-  * Para descobrir o salário-base, subtraia do salário bruto a alíquota do INSS: R$ 3.000,00 - R$ 330,00 = R$ 2.670,00.
-  * Para pegar o valor do IR, temos um salário-base (já deduzido o INSS) entre R$ 1.903,99 e 2.826,65, sendo a alíquota, então, de 7.5%, com parcela de R$ 142,80 a deduzir do imposto. Assim, temos:
-    * R$ 2.670,00: salário com INSS já deduzido;
-    * 7.5%: alíquota de imposto de renda, que representa um desconto de R$ 200,25.
-    * R$ 142,80 parcela a se deduzir do imposto de renda.
-  * Fazendo a conta para obtermos o valor do imposto de renda temos: R$ 200,25 (que representa 7,5% de R$ 2.670,00) - R$ 142,80 (dedução do imposto de renda) = R$ 57,45
-  * O último cálculo para conseguir o salário líquido é R$ 2.670,00 - R$ 57,45 (salário-base - valor IR) = R$ 2.612,55.
+### Criando layouts para dispositivos móveis e para impressão
+Realize as seguintes tarefas:
+1. Adicione uma media query no arquivo CSS e as regras necessárias para que a página se pareça com a imagem abaixo quando ela for impressa. Especificamente:
+  1.1. Os elementos com id header, navigation e footer devem desaparecer;
+  1.2. O elemento com id aside deve ser mostrado abaixo do conteúdo principal.
+2. Adicione uma media query no arquivo CSS e as regras necessárias para que a página se pareça com as imagens abaixo quando a tela for redimensionada para larguras menores. Especificamente:
+  2.1. O elemento com id aside deve desaparecer;
+  2.2. O elemento body não deve ter padding;
+  2.3. As imagens não devem exceder a largura da tela;
+  2.4. Os itens dentro do elemento navigation devem aparecer cada um em sua própria linha;
+  2.5. O elemento com id header deve ser fixo, de forma que ele fique aparecendo sempre no topo da tela, mesmo após a pessoa usuária rolar a página.
 
-O resultado do exércios estão armazenados no arquivo script.js na pasta deste README.md.
+### Bônus
+Criei um layout responsivo utilizando o framework Bootstrap.
+Voltar à pagina que você criou na aula de HTML Semântico sobre o camarão louva deus e criar um layout bem bacana para ela ser acessada a partir de telas menores? 🦐🦗🥊
+Sugestão:
+1. Crie um layout específico para telas pequenas (smartphones); 📱
+2. Crie um layout específico para telas médias (tablets); 📱
+3. Crie um layout específico para impressão (impressoras, salvar como PDF, etc). 🖨
