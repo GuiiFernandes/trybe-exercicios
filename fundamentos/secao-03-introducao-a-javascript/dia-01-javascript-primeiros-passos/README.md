@@ -1,4 +1,4 @@
-# Dia 04 (HTML Semântico)
+# Dia 01 (Primeiros Passos)
 
 Neste dia aprendi sobre o que são, como declarar e quais os tipos de variáveis, operadores aritméticos e condicionais e estruturas condicionais da linguagem `JavaScript`.
 
