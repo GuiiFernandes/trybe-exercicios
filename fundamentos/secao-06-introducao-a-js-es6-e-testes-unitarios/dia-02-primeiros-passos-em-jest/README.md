@@ -1,70 +1,170 @@
-# Dia 04 (HTML Semântico)
+# Dia 02 (Primeiros passos em Jest)
 
-Neste dia aprendi sobre o que são, como declarar e quais os tipos de variáveis, operadores aritméticos e condicionais e estruturas condicionais da linguagem `JavaScript`.
+Neste dia aprendi sobre o importante e transformador mundo dos testes unitários! Teste unitário é uma das maneiras de realizar testes. Ele tem como objetivo testar pequenas partes do código de forma isolada, como, por exemplo, uma função. Dessa maneira, simulamos as entradas e as saídas que a função deve ter.
+Também vai aprendi o conceito de TDD ou Test Driven Development (Desenvolvimento Orientado a Testes), em que primeiro criamos o teste, definindo o comportamento que seu código deve ter, para depois criar o código de fato. Utilizamos o Jest, um framework de testes para JavaScript desenvolvido pelo Facebook e atualmente um dos mais usados por empresas pelo mundo.
 
-No conteúdo da Aula, criamos 6 pequenos scripts `JavaScript` que estão na pasta `Para-Fixar`.
+No conteúdo da Aula, criamos alguns pequenos scripts `JavaScript` que estão na pasta `conteudo_aula`.
 
 Nos exércicios localizados nessa página coloquei em prática os conhecimentos adquiridos em aula e outros adquiridos por pesquisas na Web.
 
 Os requisitos do exercício são:
+Você vai implementar vários testes em contextos diferentes, a fim de consolidar a mecânica e também a forma de pensar em testes.
+### Exercício 1
+Copie a função já implementada e desenvolva os testes. Separe a função e o teste em arquivos diferentes para evitar qualquer tipo de problema.
+1. A função myRemove(arr, item) recebe um array arr e retorna uma cópia desse array sem o elemento item, caso ele exista no array:
+  1.1. Verifique se a chamada myRemove([1, 2, 3, 4], 3) retorna o array esperado;
+  1.2. Verifique se a chamada myRemove([1, 2, 3, 4], 3) não retorna o array [1, 2, 3, 4];
+  1.3. Verifique se a chamada myRemove([1, 2, 3, 4], 5) retorna o array esperado.
+  > function myRemove(arr, item) {
+  >   let newArr = [];
+  >   for (let index = 0; index < arr.length; index += 1) {
+  >     if (item !== arr[index]) {
+  >       newArr.push(arr[index]);
+  >     }
+  >   }
+  >   return newArr;
+  > }
+  > 
+  > // implemente seus testes aqui
 
-1. Elabore alguns códigos e imprima o resultado no console usando o console.log, um para cada operação aritmética básica. Seu código deve ter duas variáveis, a e b, definidas no começo com os valores que serão operados. Escreva códigos para:
-  * Adição (a + b)
-  * Subtração (a - b)
-  * Multiplicação (a * b)
-  * Divisão (a / b)
-  * Módulo (a % b)
-2. Utilize if/else para escrever um código que retorne o maior de dois números. Defina, no começo do seu código, duas variáveis com os valores que serão comparados.
-3. Utilize if/else para escrever um código que retorne o maior de três números. Defina, no começo do seu código, três variáveis com os valores que serão comparados.
-4. Utilize if/else para escrever um código que, dado um valor recebido como parâmetro, retorne: “positive”, se esse valor for positivo; “negative”, se esse valor for negativo, e “zero”, caso esse valor não seja nem positivo nem negativo.
-5. Utilize if/else para escrever um código que defina três variaveis com os valores dos três ângulos internos de um triângulo. Retorne true se os ângulos representarem os ângulos de um triângulo e false, caso contrário. Se algum ângulo for inválido, você deve retornar uma mensagem de erro.
-  * Para os ângulos serem de um triângulo válido, a soma dos três deve ser 180 graus.
-  * Um ângulo será considerado inválido se não tiver um valor positivo.
-6. Utilize switch/case para escrever um código que receba o nome de uma peça de xadrez e retorne os movimentos que ela pode fazer.
-  * Como desafio, escreva um código para funcionar tanto se receber o nome de uma peça com letras maiúsculas quanto com letras minúsculas, sem aumentar a quantidade de condicionais.
-  * Como dica, você pode pesquisar uma função que faça uma string ficar com todas as letras minúsculas (lower case).
-  * Se a peça passada for inválida, o código deve retornar uma mensagem de erro.
-  * Exemplo: bishop (bispo) -> diagonals (diagonais)
+### Exercício 2
+Copie a função já implementada e desenvolva os testes. Separe a função e o teste em arquivos diferentes para evitar qualquer tipo de problema.
+2. A função myFizzBuzz(num) recebe um número num como parâmetro. Caso num seja um número divisível por 3 e 5, a função retorna "fizzbuzz". Caso num seja um número divisível apenas por 3, retorna "fizz". E caso num seja um número divisível apenas por 5, retorna "buzz". Se num for um número que não é divisível nem por 3 e nem por 5, a função retorna o próprio número num. Caso num não seja um número, a função retorna false.
+  2.1. Execute a função myFizzBuzz(num), sendo num um número divisível por 3 e 5, e verifique se o retorno é o esperado.
+  2.2. Execute a função myFizzBuzz(num), sendo num um número divisível por 3, e verifique se o retorno é o esperado.
+  2.3. Execute a função myFizzBuzz(num), sendo num um número divisível por 5, e verifique se o retorno é o esperado.
+  2.4. Execute a função myFizzBuzz(num), sendo num um número que não é divisível por 3 ou 5, e verifique se o retorno é o esperado.
+  2.5. Execute a função myFizzBuzz(num), sendo num um parâmetro que não é um número, e verifique se o retorno é o esperado.
+  > function myFizzBuzz(num) {
+  >   if (typeof num !== 'number') return false;
+  >   if (num % 3 === 0 && num % 5 === 0) return 'fizzbuzz';
+  >   if (num % 3 === 0) return 'fizz';
+  >   if (num % 5 === 0) return 'buzz';
+  >   return num;
+  > }
+  > 
+  > // implemente seus testes aqui
 
-7. Utilize if/else para escrever um código que converta uma nota dada em porcentagem (de 0 a 100) em conceitos de A a F. Siga as seguintes regras:
-  * Porcentagem >= 90 -> A
-  * Porcentagem >= 80 -> B
-  * Porcentagem >= 70 -> C
-  * Porcentagem >= 60 -> D
-  * Porcentagem >= 50 -> E
-  * Porcentagem < 50 -> F
-  * O código deve retornar uma mensagem de erro e encerrar se a nota passada for menor que 0 ou maior que 100.
-8. Utilize if/else para escrever um código que defina três números em variáveis e retorne true se pelo menos uma das três for par. Caso contrário, o código deve retornar false.
-  * Bônus: use somente um if.
-9. Utilize if/else para escrever um código que defina três números em variáveis e retorne true se pelo menos uma das três for ímpar. Caso contrário, o código deve retornar false.
-  * Bônus: use somente um if.
-10. Utilize if/else para escrever um código que se inicie com dois valores em duas variáveis diferentes: o custo de um produto e seu valor de venda. A partir dos valores, o código deve calcular o lucro (ou seja, o valor de venda menos o custo do produto) da empresa ao vender mil produtos.
-  * Atente para o fato de que um imposto de 20% incide sobre o custo do produto.
-  * Seu código deve emitir uma mensagem de erro e encerrar caso algum dos valores de entrada seja menor que zero.
-  * O lucro de um produto é o resultado da subtração do valor de venda pelo custo e deve considerar que o imposto de 20% faz parte do valor de custo.
-  * valorCustoTotal = valorCusto + impostoSobreOCusto;
-  * lucro = valorVenda - valorCustoTotal (lucro de um produto);
-11. Utilize if/else para escrever um código que, dado um salário bruto, calcule o líquido a ser recebido. Uma pessoa que trabalha de carteira assinada no Brasil tem descontados de seu salário bruto o INSS e o IR. 
-  *A notação para um salário de R$1500,10, por exemplo, deve ser 1500.10. Para as faixas de impostos, use as seguintes referências:
-    * INSS (Instituto Nacional do Seguro Social)
-      * Salário bruto até R$ 1.556,94: alíquota de 8%
-      * Salário bruto de R$ 1.556,95 a R$ 2.594,92: alíquota de 9%
-      * Salário bruto de R$ 2.594,93 a R$ 5.189,82: alíquota de 11%
-      * Salário bruto acima de R$ 5.189,82: alíquota máxima de R$ 570,88
-    * IR (Imposto de Renda)
-      * Até R$ 1.903,98: isento de imposto de renda
-      * De R$ 1.903,99 a 2.826,65: alíquota de 7,5% e parcela de R$ 142,80 a deduzir do imposto
-      * De R$ 2.826,66 a R$ 3.751,05: alíquota de 15% e parcela de R$ 354,80 a deduzir do imposto
-      * De R$ 3.751,06 a R$ 4.664,68: alíquota de 22,5% e parcela de R$ 636,13 a deduzir do imposto
-      * Acima de R$ 4.664,68: alíquota de 27,5% e parcela de R$ 869,36 a deduzir do imposto.
-Exemplo: Uma pessoa que possui o salário bruto de R$ 3.000,00, terá como primeiro desconto referente à contribuição do INSS. O cálculo será:
-  * O salário bruto está entre R$ 2.594,93 e R$ 5.189,82, então sua alíquota para INSS é de 11%. O INSS será 11% de R$ 3.000, ou seja, R$ 330,00.
-  * Para descobrir o salário-base, subtraia do salário bruto a alíquota do INSS: R$ 3.000,00 - R$ 330,00 = R$ 2.670,00.
-  * Para pegar o valor do IR, temos um salário-base (já deduzido o INSS) entre R$ 1.903,99 e 2.826,65, sendo a alíquota, então, de 7.5%, com parcela de R$ 142,80 a deduzir do imposto. Assim, temos:
-    * R$ 2.670,00: salário com INSS já deduzido;
-    * 7.5%: alíquota de imposto de renda, que representa um desconto de R$ 200,25.
-    * R$ 142,80 parcela a se deduzir do imposto de renda.
-  * Fazendo a conta para obtermos o valor do imposto de renda temos: R$ 200,25 (que representa 7,5% de R$ 2.670,00) - R$ 142,80 (dedução do imposto de renda) = R$ 57,45
-  * O último cálculo para conseguir o salário líquido é R$ 2.670,00 - R$ 57,45 (salário-base - valor IR) = R$ 2.612,55.
+### Exercício 3
+Considere o código abaixo para realizar o próximo exercício:
+  > const mapString = (objectMap, string) => {
+  >   const splitString = string.split('');
+  >   const mappedArray = [];
+  >   for (let index = 0; index < splitString.length; index += 1) {
+  >     const character = splitString[index];
+  >     const mappedValue = objectMap[character];
+  >     
+  >     if (mappedValue) {
+  >       mappedArray.push(mappedValue);
+  >     } else {
+  >       mappedArray.push(character);
+  >     }
+  >   }
+  >   return mappedArray.join('');
+  > }
+  > const encode = (string) => {
+  >   const map = {
+  >     a: 1,
+  >     e: 2,
+  >     i: 3,
+  >     o: 4,
+  >     u: 5,
+  >   };
+  >   return mapString(map, string);
+  > }
+  > const decode = (string) => {
+  >   const map = {
+  >     1: 'a',
+  >     2: 'e',
+  >     3: 'i',
+  >     4: 'o',
+  >     5: 'u',
+  >   };
+  >   return mapString(map, string);
+  > }
+3. Para as funções encode e decode, crie os seguintes testes em Jest:
+  3.1. Teste se encode e decode são funções;
+  3.2. Para a função encode, teste se as vogais a, e, i, o, u são convertidas em 1, 2, 3, 4 e 5, respectivamente;
+  3.3. Para a função decode, teste se os números 1, 2, 3, 4 e 5 são convertidos nas vogais a, e, i, o, u, respectivamente;
+  3.4. Teste se as demais letras/números não são convertidos para cada caso;
+  3.5. Teste se a string que é retornada pelas funções tem o mesmo número de caracteres que a string passada como parâmetro.
 
-O resultado do exércios estão armazenados no arquivo script.js na pasta deste README.md.
+### Exercício 4
+A função techList recebe como parâmetros um array contendo uma lista de tecnologias e uma string com um nome. Para cada tecnologia no array a função cria, em ordem alfabética, um objeto com a seguinte estrutura:
+  > {
+  >   tech: 'nomeTecnologia',
+  >   name: name,
+  > }
+Implemente a função techList a partir dos testes abaixo. É importante nunca alterar os testes ou as variáveis já escritas no código.
+  > const techList = require('./techList.js');
+  > 
+  > describe('Testa a função techList', () => {
+  >   it('Testa se a função techList é definida', () => {
+  >     expect(techList).toBeDefined();
+  >   });
+  >   it('Testa se techList é uma função', () => {
+  >     expect(typeof techList).toBe('function');
+  >   });
+  >   it('Lista com 5 tecnologias deve retornar uma lista de objetos ordenados', () => {
+  >     expect(techList(['React', 'Jest', 'HTML', 'CSS', 'JavaScript'], 'Lucas')).toEqual([
+  >       {
+  >         tech: 'CSS',
+  >         name: 'Lucas'
+  >       },
+  >       {
+  >         tech: 'HTML',
+  >         name: 'Lucas'
+  >       },
+  >       {
+  >         tech: 'JavaScript',
+  >         name: 'Lucas'
+  >       },
+  >       {
+  >         tech: 'Jest',
+  >         name: 'Lucas'
+  >       },
+  >       {
+  >         tech: 'React',
+  >         name: 'Lucas'
+  >       }
+  >     ]);
+  >   });
+  >   it('Lista com 0 tecnologias deve retornar uma mensagem de erro "Vazio!"', () => {
+  >     expect(techList([], 'Lucas')).toBe('Vazio!');
+  >   });
+  > });
+
+### Exercício 5
+A função hydrate recebe uma string no formato “numero bebida”, e retorna a sugestão de quantos copos de água você deve beber para se hidratar. Para cada bebida, deve-se tomar um copo de água para não ter ressaca. Exemplo:
+  > // string recebida
+  > '1 cerveja'
+  > // retorno da função
+  > '1 copo de água'
+  > 
+  > // string recebida
+  > '1 cerveja, 2 shots e 1 catuaba'
+  > // retorno da função
+  > '4 copos de água'
+  > 
+  > // string recebida
+  > '2 caipirinhas'
+  > // retorno da função
+  > '2 copos de água'
+Implemente a função hydrate a partir dos testes abaixo. É importante nunca alterar os testes ou as variáveis já escritas no código.
+  > const hydrate = require('./hydrate.js');
+  > 
+  > describe('Testa a função hydrate', () => {
+  >   it('Testa se a função hydrate é definida', () => {
+  >     expect(hydrate).toBeDefined();
+  >   });
+  >   it('Testa se hydrate é uma função', () => {
+  >     expect(typeof hydrate).toBe('function');
+  >   });
+  >   it('Ao receber uma string retorne a sugestão de quantos copos de água deve-se beber', () => {
+  >     expect(hydrate('1 cerveja')).toBe('1 copo de água');
+  >     expect(hydrate('1 cachaça, 5 cervejas e 1 copo de vinho')).toBe('7 copos de água');
+  >     expect(hydrate('2 shots de tequila, 2 cervejas e 1 corote')).toBe('5 copos de água');
+  >     expect(hydrate('1 copo de catuaba, 1 cervejas e 1 copo de vinho')).toBe('3 copos de água');
+  >     expect(hydrate('4 caipirinhas e 2 cervejas')).toBe('6 copos de água');
+  >   });
+  > });
