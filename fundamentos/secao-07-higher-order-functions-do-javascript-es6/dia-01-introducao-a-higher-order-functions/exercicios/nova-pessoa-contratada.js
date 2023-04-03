@@ -10,7 +10,7 @@ const newEmployees = () => {
   }
   const createEmployees = (name) => {
     const key = Object.keys(employees).find((key) => employees[key] === '');
-      if (key) employees[key] = { nomeCompleto: name, email: `${name.toLowerCase().replaceAll(' ', '_')}@trybe.com` };
+    if (key) employees[key] = { nomeCompleto: name, email: `${name.toLowerCase().replaceAll(' ', '_')}@trybe.com` };
   };
   createEmployees('Pedro Guerra');
   createEmployees('Luiza Drumond');
