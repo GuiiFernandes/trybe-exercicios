@@ -7,4 +7,4 @@ No conteúdo da Aula, criamos 2 pequenos códigos que estão na pasta `conteudo_
 
 Nos exércicios coloquei em prática os conhecimentos adquiridos em aula e outros adquiridos por pesquisas na Web.
 
-Os estão armazenados no gitHub e podem ser acessados [clicando aqui](https://github.com/tryber/sd-031-a-exercise-books-list/tree/gui-fernandes-exercise-books-list).
+Os exercícios estão armazenados nas pastas exercícios e bônus, com seus respectivos enunciados e no gitHub, pelo qual podem ser acessados [clicando aqui](https://github.com/tryber/sd-031-a-exercise-books-list/tree/gui-fernandes-exercise-books-list).

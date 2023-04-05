@@ -1,55 +1,96 @@
-const mage = {
-  healthPoints: 130,
-  intelligence: 45,
-  mana: 125,
-  damage: undefined,
-};
+//Todos os exercícios devem ser realizados utilizando reduce e, se necessário, use outra HOF. A informação será citada no enunciado.
 
-const warrior = {
-  healthPoints: 200,
-  strength: 30,
-  weaponDmg: 2,
-  damage: undefined,
-};
+//1 - Dada uma matriz, transforme em um array.
+const arrays = [
+  ['1', '2', '3'],
+  [true],
+  [4, 5, 6],
+];
 
-const dragon = {
-  healthPoints: 350,
-  strength: 50,
-  damage: undefined,
-};
+const flatten3 = () => arrays.flat();
+const flatten2 = () => arrays.reduce((array, element) => array.concat(element));
+const flatten = () => arrays.flatMap((element) => element);
+console.log(flatten());
+console.log(flatten2());
+console.log(flatten3());
 
-const battleMembers = { mage, warrior, dragon };
-
-const dragonDamage = (dragon) => Math.round(Math.random() * (dragon.strength - 15) + 15);
-const warriorDamage = (warrior) => Math.round(Math.random() * ((warrior.strength * warrior.weaponDmg) - warrior.strength) + warrior.strength);
-const mageDamage = (mage) => {
-  if (mage.mana < 15) return 'Não possui mana suficiente';
-  mage.mana -= 15;
-  return { damage: Math.round(Math.random() * ((mage.intelligence * 2) - mage.intelligence) + mage.intelligence), mana: 15 }
-};
-
-const gameActions = {
-  turnWarrior(warrior, dragon, warriorAttack) {
-    const damage = warriorAttack(warrior);
-    warrior.damage = damage;
-    dragon.healthPoints -= damage;
+// Para os próximos exercícios, considere o seguinte array:
+const books = [
+  {
+    id: 1,
+    name: 'As Crônicas de Gelo e Fogo',
+    genre: 'Fantasia',
+    author: {
+      name: 'George R. R. Martin',
+      birthYear: 1948,
+    },
+    releaseYear: 1991,
   },
-  turnMage(mage,dragon, mageAttack) {
-    const damage = mageAttack(mage);
-    mage.damage = damage;
-    dragon.healthPoints -= damage.damage;
+  {
+    id: 2,
+    name: 'O Senhor dos Anéis',
+    genre: 'Fantasia',
+    author: {
+      name: 'J. R. R. Tolkien',
+      birthYear: 1892,
+    },
+    releaseYear: 1954,
   },
-  turnDragon(dragon, mage, warrior, dragonAttack) {
-    const damage = dragonAttack(dragon);
-    dragon.damage = damage;
-    mage.healthPoints -= damage;
-    warrior.healthPoints -= damage;
+  {
+    id: 3,
+    name: 'Fundação',
+    genre: 'Ficção Científica',
+    author: {
+      name: 'Isaac Asimov',
+      birthYear: 1920,
+    },
+    releaseYear: 1951,
   },
-  turn() {
-    this.turnWarrior(battleMembers.warrior, battleMembers.dragon, warriorDamage);
-    this.turnMage(battleMembers.mage, battleMembers.dragon, mageDamage);
-    this.turnDragon(battleMembers.dragon, battleMembers.mage, battleMembers.warrior, dragonDamage);
-    console.log(battleMembers);
+  {
+    id: 4,
+    name: 'Duna',
+    genre: 'Ficção Científica',
+    author: {
+      name: 'Frank Herbert',
+      birthYear: 1920,
+    },
+    releaseYear: 1965,
   },
-};
-gameActions.turn();
+  {
+    id: 5,
+    name: 'A Coisa',
+    genre: 'Terror',
+    author: {
+      name: 'Stephen King',
+      birthYear: 1947,
+    },
+    releaseYear: 1986,
+  },
+  {
+    id: 6,
+    name: 'O Chamado de Cthulhu',
+    genre: 'Terror',
+    author: {
+      name: 'H. P. Lovecraft',
+      birthYear: 1890,
+    },
+    releaseYear: 1928,
+  },
+];
+
+//2 - Crie uma string com os nomes de todas as pessoas autoras.
+const reduceNames = () => books.reduce((names, book, index) => `${names}${index !== 0 ? ', ' : ''}${book.author.name}`, '');
+console.log(reduceNames());
+const reduceNames2 = () => books.map((book) => book.author.name).join(', ');
+console.log(reduceNames2());
+
+//3 - Calcule a média de idade que as pessoas autoras tinham quando seus respectivos livros foram lançados.
+const averageAge = () => books
+  .map((book) => book.releaseYear - book.author.birthYear)
+  .reduce((sum, age) => sum + age) / books.length;
+console.log(averageAge());
+
+//4 - Encontre o livro com o maior nome.
+const longestNamedBook = () => books.reduce((biggerName, book) =>
+  book.name.length > biggerName.name.length ? book : biggerName);
+console.log(longestNamedBook());
