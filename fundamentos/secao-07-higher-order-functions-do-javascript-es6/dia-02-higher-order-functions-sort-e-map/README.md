@@ -1,4 +1,4 @@
-# Dia 01 (Introdução a Higher Order Functions)
+# Dia 02 (Higher Order Functions - sort e map)
 
 Neste dia aprendi os conceitos e as aplicações de `Array.sort` e `Array.map`. Essas funções são bastante poderosas, podendo facilitar muito a manipulação e criação de arrays, resultando em um código mais legível, conciso e expressivo..
 
