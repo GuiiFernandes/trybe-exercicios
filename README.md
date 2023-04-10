@@ -4,7 +4,7 @@ Este repositório contém todas as atividades de aprendizagem desenvolvidas por 
 
 > O programa de estudos da Trybe conta com mais de 1.500 horas de aulas presenciais e online, aborda introdução ao desenvolvimento de software, front-end, back-end, ciência da computação, engenharia de software, metodologias ágeis e habilidades comportamentais.
 
-## Módulo: Fundamentos ⏳
+## Módulo: Fundamentos ✅
 
 ##### Seção 1: Unix, Shell & Git ✅
 
@@ -54,14 +54,14 @@ Este repositório contém todas as atividades de aprendizagem desenvolvidas por 
 - [X] 6-3: _Matchers e cobertura de código_
 - [X] 6-4: _Projeto - JavaScript Testes Unitários_
 
-##### Seção 7: Higher Order Functions do JavaScript ES6 ⏳
+##### Seção 7: Higher Order Functions do JavaScript ES6 ✅
 
 - [X] 7-1: _Introdução a Higher Order Functions_
-- [] 7-2: _Higher Order Functions - sort e map_
-- [] 7-3: _Higher Order Functions - filter e reduce_
-- [] 7-4: _JavaScript ES6 - spread operator, rest parameters e object destructuring_
-- [] 7-5: _JavaScript ES6 - Array destructuring, Default destructuring, Object property shorthand e default parameters_
-- [] 7-6: _Projeto - Zoo functions_
+- [X] 7-2: _Higher Order Functions - sort e map_
+- [X] 7-3: _Higher Order Functions - filter e reduce_
+- [X] 7-4: _JavaScript ES6 - spread operator, rest parameters e object destructuring_
+- [X] 7-5: _JavaScript ES6 - Array destructuring, Default destructuring, Object property shorthand e default parameters_
+- [X] 7-6: _Projeto - Zoo functions_
 
 ## Módulo: Front-End ⏳
 
