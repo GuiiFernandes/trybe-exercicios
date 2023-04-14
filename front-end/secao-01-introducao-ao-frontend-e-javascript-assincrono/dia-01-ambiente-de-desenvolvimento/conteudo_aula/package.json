@@ -4,7 +4,8 @@
   "description": "Esse site gera senhas seguras de 21 caracteres.",
   "main": "main.js",
   "scripts": {
-    "dev": "vite --open"
+    "dev": "vite --open",
+    "lint": "eslint ./src"
   },
   "keywords": [
     "javascript",
@@ -15,8 +16,13 @@
   "author": "Guilherme Fernandes",
   "license": "ISC",
   "dependencies": {
+    "@trybe/eslint-config-frontend": "^1.8.3",
+    "clipboard-copy": "^4.0.1",
     "nanoid": "^4.0.2",
     "vite": "^4.2.1"
   },
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "eslint": "^8.38.0"
+  }
 }
