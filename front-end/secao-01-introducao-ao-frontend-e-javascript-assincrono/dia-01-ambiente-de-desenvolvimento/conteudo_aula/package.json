@@ -4,9 +4,19 @@
   "description": "Esse site gera senhas seguras de 21 caracteres.",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite --open"
   },
-  "keywords": ["javascript", "node", "HTML", "CSS"],
+  "keywords": [
+    "javascript",
+    "node",
+    "HTML",
+    "CSS"
+  ],
   "author": "Guilherme Fernandes",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "nanoid": "^4.0.2",
+    "vite": "^4.2.1"
+  },
+  "type": "module"
 }
