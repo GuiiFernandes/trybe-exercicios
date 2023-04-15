@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Validador de Campos</title>
+</head>
+<body class="d-flex vh-100 flex-column justify-content-center bg-secondary text-white">
+  <main class="mx-auto text-center">
+    <h1 class="display-3 text-dark my-3">Validador de Campos</h1>
+    <input type="text" name="text" id="text" class="bg-dark form-control form-control-lg my-3 text-white" placeholder="Digite o dado a validar"/>
+    <select name="type" id="type" class="bg-dark form-select my-3 text-white" aria-label="Tipo do campo a validar" aria-placeholder="selecione o tipo">
+      <option value="cpf">CPF</option>
+      <option value="email">E-mail</option>
+      <option value="cellPhone">Celular</option>
+      <option value="cep">CEP</option>
+      <option value="url">URL</option>
+    </select>
+    <button type="button" class="btn btn-dark mb-3">Validar</button>
+    <p class="text-dark">Digite o valor, escolha o campo e clique em validar.</p>
+  </main>
+</body>
+<script type="module" src="./src/main.js"></script>
+</html>

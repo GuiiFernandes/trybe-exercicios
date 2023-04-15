@@ -1,0 +1,26 @@
+{
+  "name": "validador-de-campos",
+  "version": "1.0.0",
+  "description": "Essa aplicação valida o campo apartir do texto digitado no input e do tipo escolhido",
+  "main": "main.js",
+  "scripts": {
+    "dev": "vite --open",
+    "lint": "eslint ./src",
+    "build": "vite build"
+  },
+  "keywords": [
+    "javascript",
+    "html",
+    "css",
+    "vite"
+  ],
+  "author": "Guilherme Fernandes",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@trybe/eslint-config-frontend": "^1.8.3",
+    "bootstrap": "^5.3.0-alpha3",
+    "validator": "^13.9.0",
+    "vite": "^4.2.1"
+  }
+}
