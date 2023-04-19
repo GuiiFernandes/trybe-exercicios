@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './style.css';
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
 
 const baseUrl = 'https://akabab.github.io/superhero-api/api';
 const button = document.querySelector('.btn');
@@ -10,6 +10,7 @@ const data = await fetch(`${baseUrl}/all.json`)
   .then((response) => response.json())
   .then((data) => data)
   .catch((error) => {
+    console.error(error);
     Swal.fire({
       icon: 'error',
       title: 'Oops...',
