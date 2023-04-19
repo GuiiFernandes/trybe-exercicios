@@ -8,7 +8,7 @@ const elements = document.querySelectorAll('.modifiable');
 
 const data = await fetch(`${baseUrl}/all.json`)
   .then((response) => response.json())
-  .then((data) => data)
+  .then((dataHeroes) => dataHeroes)
   .catch((error) => {
     console.error(error);
     Swal.fire({
@@ -16,8 +16,8 @@ const data = await fetch(`${baseUrl}/all.json`)
       title: 'Oops...',
       text: `Erro: ${error.message}`,
       color: '#fff',
-      background: '#24212e'
-    })
+      background: '#24212e',
+    });
   });
 
 button.addEventListener('click', () => {
