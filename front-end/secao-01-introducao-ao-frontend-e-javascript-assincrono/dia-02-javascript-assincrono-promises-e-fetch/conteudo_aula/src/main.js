@@ -13,7 +13,7 @@ const USERS_API = 'https://dummyjson.com';
 // faça a lógica para pegar as informações das pessoas usuárias e preencher o select aqui.
 const data = (URL) => fetch(URL)
   .then((response) => response)
-  .then(((dataObj) => dataObj.json()))
+  .then((dataObj) => dataObj.json())
   .catch((error) => {
     fillErrorMessage(error.message);
   });
@@ -30,14 +30,11 @@ usersSelect.addEventListener('change', () => {
     .then(({ posts }) => {
       const num = -1;
       fillPosts(posts);
-      return posts.at(num).id;
+      return fetch(`${USERS_API}/posts/${posts.at(num).id}/comments`);
     })
-    .then((postId) => {
-      fetch(`${USERS_API}/posts/${postId}/comments`)
-        .then((response) => response.json())
-        .then(({ comments }) => {
-          fillFeaturedPostComments(comments);
-        });
+    .then((response) => response.json())
+    .then(({ comments }) => {
+      fillFeaturedPostComments(comments);
     })
     .catch((error) => {
       fillErrorMessage(error.message);
