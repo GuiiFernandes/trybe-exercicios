@@ -19,9 +19,7 @@ const renderData = (data) => {
 button.addEventListener('click', async (event) => {
   event.preventDefault();
   try {
-    if (!cep.value) throw new Error('Digite um CEP!');
     const data = await fetchApi(cep.value);
-    console.log(data);
     if (data.erro) throw new Error('CEP inexistente!');
     renderData(data);
   } catch (error) {
