@@ -5,7 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Consulta CEP</title>
   </head>
-  <body>
+  <body class="d-flex flex-column justify-content-center align-items-center vh-100">
+    <main class="d-flex flex-column justify-content-center align-items-center w-50">
+      <form class="pt-5 px-5 w-100">
+        <h1 class="display-1"><label for="cep">Cosulta de CEP</label></h1>
+        <div class="input-group mb-3">
+          <input type="text" id="cep" name="cep" class="form-control" placeholder="XXXXX-XXX"/>
+          <button class="btn btn-outline-warning" id="button" type="button">BUSCAR</button>
+        </div>
+      </form>
+      <section id="result" class="pb-5 px-5 w-100"></section>
+    </main>
+    <footer class="fixed-bottom vw-100 text-center pt-3">
+      <p>&copy; 2023, Guilherme Fernandes</p>
+    </footer>
   </body>
   <script type="module" src="./src/main.js"></script>
 </html>
