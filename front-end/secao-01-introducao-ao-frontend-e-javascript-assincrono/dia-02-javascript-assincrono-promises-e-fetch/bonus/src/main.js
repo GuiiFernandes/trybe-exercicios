@@ -8,14 +8,14 @@ const baseUrls = [
   'https://api.thecatapi.com/v1/images/search',
   'https://dog.ceo/api/breeds/image/random',
 ];
-const baseProperties = ['url', 'message'];
+const keyProperty = ['url', 'message'];
 
 const getData = (num) => fetch(baseUrls[num])
   .then((response) => response.json())
   .then((data) => {
     img.setAttribute('src', (num
-      ? data[baseProperties[num]]
-      : data[0][baseProperties[num]]));
+      ? data[keyProperty[num]]
+      : data[0][keyProperty[num]]));
   })
   .catch((error) => {
     console.error(error);
