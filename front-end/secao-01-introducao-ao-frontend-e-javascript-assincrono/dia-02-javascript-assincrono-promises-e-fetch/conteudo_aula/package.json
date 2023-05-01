@@ -1,0 +1,24 @@
+{
+  "name": "microblogs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "dev": "vite --open",
+    "lint": "eslint ./src"
+  },
+  "keywords": [
+    "JavaScript",
+    "HTML",
+    "CSS",
+    "Microblogs"
+  ],
+  "author": "Guilherme Fernandes Dev",
+  "license": "ISC",
+  "dependencies": {
+    "@trybe/eslint-config-frontend": "^1.8.3",
+    "axios": "^1.3.5",
+    "vite": "^4.2.2"
+  },
+  "type": "module"
+}

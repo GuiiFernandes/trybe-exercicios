@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background-color: #24212e;
+  color: white;
+  font-size: 25px;
+}
+
+main {
+  width: 60%;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#img-container {
+  width: 70%;
+  height: 400px;
+  margin: 0 auto;
+}
+
+.display-3 {
+  font-weight: 700;
+  font-size: 60px;
+}
+
+img {
+  max-width: 100%;
+}
+
+button {
+  width: 80%;
+}
