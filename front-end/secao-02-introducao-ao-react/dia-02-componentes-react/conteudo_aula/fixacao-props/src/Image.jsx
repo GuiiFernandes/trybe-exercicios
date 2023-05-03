@@ -11,6 +11,6 @@ class Image extends React.Component {
 Image.propTypes = {
   source: PropTypes.string.isRequired,
   alternativeText: PropTypes.string.isRequired,
-}
+};
 
 export default Image;
