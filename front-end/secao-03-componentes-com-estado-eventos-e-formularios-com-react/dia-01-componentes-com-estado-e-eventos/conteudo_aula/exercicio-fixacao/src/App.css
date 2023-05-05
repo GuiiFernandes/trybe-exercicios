@@ -1,0 +1,90 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, .container, .buttons-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  min-height: 100vh;
+}
+
+.container {
+  gap: 50px;
+}
+
+.buttons-container {
+  flex-direction: column;
+  gap: 20px;
+}
+
+.div-counter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 100px;
+  background-color: lightgray;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.btn {
+  padding: 10px 0;
+  width: 100%;
+  font-weight: 700;
+  border-radius: 8px;
+  background-color: lightgray;
+}
+
+.black {
+  border: 2px solid black;
+}
+
+.black:hover {
+  background-color: black;
+  color: white;
+}
+
+.even {
+  background-color: lightgreen;
+}
+
+.blue {
+  border: 2px solid darkblue;
+  color: darkblue;
+}
+
+.blue:hover {
+  background-color: darkblue;
+  color: lightgray;
+}
+
+.red {
+  border: 2px solid darkred;
+  color: darkred;
+}
+
+.red:hover {
+  background-color: darkred;
+  color: lightgray;
+}
+
+.green {
+  border: 2px solid darkgreen;
+  color: darkgreen
+}
+
+.green:hover {
+  background-color: darkgreen;
+  color: lightgray;
+}
+
+.even:hover {
+  color: lightgreen;
+}
