@@ -1,0 +1,40 @@
+.input-group-text {
+  width: 60px;
+}
+
+
+.form-control {
+  resize: none;
+}
+
+.count-characters {
+  font-size: 11px;
+  width: 100%;
+  padding-left: 10px;
+}
+
+.btn-success {
+  width: 100%;
+}
+
+.form-check-label {
+  font-size: 13px;
+}
+
+.form-check.form-switch {
+  border-radius: 8px;
+  padding: 8px;
+  padding-left: 48px;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.invalidCheck {
+  border: 1px solid darkred;
+  background-color: rgba(139, 0, 0, 0.1);
+}
+
+.validCheck {
+  border: 1px solid darkgreen;
+  background-color: rgba(0, 100, 0, 0.1);
+}
