@@ -1,0 +1,23 @@
+.user-profile {
+  border: 0.1rem solid rgba(0, 0, 139, 0.2);
+  border-radius: 0.8rem;
+  display: flex;
+  margin: 1rem 0;
+}
+
+.user-profile > img {
+  border-radius: 0.8rem;
+}
+
+.user-data {
+  padding: 0.3rem;
+  padding-left: 1rem;
+}
+
+.user-data > p {
+  margin: 0.1rem;
+}
+
+.display-4 {
+  margin: 0.5rem 0;
+}
