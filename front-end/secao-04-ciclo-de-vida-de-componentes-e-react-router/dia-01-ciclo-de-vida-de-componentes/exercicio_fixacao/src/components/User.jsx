@@ -17,7 +17,7 @@ export default class User extends Component {
           <h3 className="display-4">{ `${title} ${first} ${last},` }</h3>
           <p>{ `Residente em ${name}, ${number} - ${city}-${state} / ${country},` }</p>
           <p>{ `${age} anos.` }</p>
-          <p>{ `Pode ser contatado(a) pelo e-mail ${email} e celular ${cell}` }</p>
+          <p>{ `Pode ser contatado(a) pelo e-mail ${email} ou celular ${cell}` }</p>
         </div>
       </div>
     );
