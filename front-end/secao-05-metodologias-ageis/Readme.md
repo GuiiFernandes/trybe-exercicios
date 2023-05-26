@@ -1,0 +1,1 @@
+Essa seção foi marcada por uma aula sobre Kanban e Scrum e um projeto em grupo de 5 pessoas de 4 dias.
