@@ -1,6 +1,7 @@
 // App.test.js
 import React from 'react';
-import { render, screen, act } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import { act } from 'react-dom/test-utils';
 import userEvent from '@testing-library/user-event';
 import App from './App';
 
