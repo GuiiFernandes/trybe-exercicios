@@ -1,24 +1,59 @@
-import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
+import { legacy_createStore as createStore } from 'redux';
+import { composeWithDevTools } from '@redux-devtools/extension';
+import './style.css';
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
+const INITIAL_STATE = {
+  status: 'Offline',
+  theme: 'light',
+};
 
-setupCounter(document.querySelector('#counter'))
+const actions = ['CHANGE_THEME', 'CHANGE_STATUS'];
+
+const reducer = (state = INITIAL_STATE, action) => {
+  switch (action.type) {
+  case 'CHANGE_THEME':
+    return {
+      ...state,
+      theme: state.theme === 'dark' ? 'light' : 'dark',
+    };
+  case 'CHANGE_STATUS':
+    return {
+      ...state,
+      status: state.status === 'Online' ? 'Offline' : 'Online',
+    };
+  default:
+    return state;
+  }
+};
+
+const store = createStore(reducer, composeWithDevTools());
+
+const handleChange = (type) => {
+  store.dispatch({ type });
+};
+
+const themeButton = document.getElementById('toggle-theme');
+const statusButton = document.getElementById('toggle-status');
+
+themeButton.addEventListener('click', () => {
+  // coloque o código aqui.
+  handleChange(actions[0]);
+});
+
+statusButton.addEventListener('click', () => {
+  // coloque o código aqui.
+  handleChange(actions[1]);
+});
+
+store.subscribe(() => {
+  const { status, theme } = store.getState();
+  const statusBtn = document.getElementById('toggle-status');
+  const themeBtn = document.getElementById('toggle-theme');
+  const statusText = document.getElementById('status');
+  const container = document.getElementById('container');
+  statusBtn.innerHTML = `Ficar ${status === 'Online' ? 'Offline' : 'Online'}`;
+  themeBtn.innerHTML = `${theme === 'dark' ? 'Light' : 'Dark'} Mode`;
+  statusText.innerHTML = status;
+  statusText.className = status.toLowerCase();
+  container.className = theme;
+});
