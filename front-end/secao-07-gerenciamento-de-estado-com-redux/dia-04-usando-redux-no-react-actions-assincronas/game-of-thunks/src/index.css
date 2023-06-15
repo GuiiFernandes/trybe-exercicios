@@ -1,0 +1,27 @@
+:root {
+
+  --background-color: #282c34;
+
+  --primary-color: #eeeeee;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body > div {
+  align-items: center;
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--background-color);
+  color: var(--primary-color);
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 1.6rem;
+  justify-content: center;
+}

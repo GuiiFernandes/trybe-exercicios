@@ -1,0 +1,35 @@
+.container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 400px;
+}
+
+.title {
+  background-image: linear-gradient(135deg, rgb(126, 229, 255) 0%, rgb(126, 229, 255) 35%, rgb(255, 86, 19) 65%, rgb(255, 86, 19) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: var(--background-color);
+  font-size: 5rem;
+  margin-bottom: 2rem;
+}
+
+.loading-title {
+  align-items: center;
+  display: flex;
+  font-size: 3rem;
+  gap: 20px;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.loading-gif {
+  height: 4rem;
+  width: 4rem;
+}
+
+.default-img {
+  border-radius: 16px;
+}
