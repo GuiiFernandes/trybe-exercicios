@@ -1,3 +1,7 @@
 {
-  "liveServer.settings.port": 5501
+  "liveServer.settings.port": 5501,
+  "dataworkspace.excludedProjects": [
+    "back-end/secao-02-introducao-a-sql/dia-02-encontrando-dados-em-um-banco-de-dados/course/exercicio/exercicio.sqlproj",
+    "back-end/secao-02-introducao-a-sql/dia-02-encontrando-dados-em-um-banco-de-dados/exercicio/exercicio.sqlproj"
+  ]
 }
