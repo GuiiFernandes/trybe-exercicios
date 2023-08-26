@@ -2,11 +2,17 @@
   "name": "exerc-6",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": "Guilherme Fernandes",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint-config-trybe-backend": "^2.1.0"
+  },
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
 }
