@@ -1,0 +1,22 @@
+{
+  "name": "solar-system-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node .",
+    "dev": "nodemon .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Guilherme Fernandes",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint-config-trybe-backend": "^2.1.0",
+    "nodemon": "2.0"
+  },
+  "dependencies": {
+    "express": "4.17",
+    "readline-sync": "^1.4.10"
+  }
+}
