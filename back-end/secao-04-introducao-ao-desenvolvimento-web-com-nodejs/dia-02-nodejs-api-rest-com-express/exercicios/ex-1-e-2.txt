@@ -1,0 +1,10 @@
+Exercício 1
+Qual é a função do código de status 400 e 422?
+R:
+400 - Bad Request -> Erro na requisição
+422 - Unprocessable Content -> solicitação bem formada, porém com erros semânticos
+
+Exercício 2
+Qual é a função do código de status 401?
+R:
+401 - Unauthorized -> Usuário não autenticado.
