@@ -1,0 +1,26 @@
+{
+  "name": "solar-system-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node .",
+    "dev": "nodemon .",
+    "test": "mocha tests/**/*.test.js --exit"
+  },
+  "keywords": [],
+  "author": "Guilherme Fernandes",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "4.3.4",
+    "eslint-config-trybe-backend": "^2.1.0",
+    "mocha": "8.4.0",
+    "nodemon": "2.0",
+    "sinon": "14.0"
+  },
+  "dependencies": {
+    "chai-http": "4.3",
+    "express": "4.17",
+    "readline-sync": "^1.4.10"
+  }
+}
