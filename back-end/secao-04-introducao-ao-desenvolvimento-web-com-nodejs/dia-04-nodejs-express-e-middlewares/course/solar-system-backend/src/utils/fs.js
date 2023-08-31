@@ -34,8 +34,19 @@ const updateData = async (id, data) => {
   return db;
 };
 
+const deleteData = async (id) => {
+  const db = await readData();
+  const index = db.findIndex((mission) => mission.id === id);
+  if (index === -1) return null;
+  db.splice(index, 1);
+  await fs.writeFile(DATA_PATH, JSON.stringify(db));
+  console.log('Dado deletado com sucesso!');
+  return db;
+};
+
 module.exports = {
   readData,
   writeData,
   updateData,
+  deleteData,
 };
