@@ -1,7 +1,8 @@
 const express = require('express');
 require('express-async-errors');
 
-const { readData, writeData, updateData, deleteData } = require('./utils/fs');
+const { updateData, deleteData } = require('./utils/fs');
+const { findAll, insert } = require('./db/missionsDb');
 
 const app = express();
 
@@ -20,13 +21,13 @@ const validadeMissionData = (req, res, next) => {
 };
 
 app.get('/missions', async (req, res) => {
-  const missions = await readData();
+  const missions = await findAll();
   res.status(200).json({ missions });
 });
 
 app.post('/missions', validadeMissionData, async (req, res) => {
   const newMission = req.body;
-  const newData = await writeData(newMission);
+  const newData = await insert(newMission);
   res.status(201).json([...newData]);
 });
 

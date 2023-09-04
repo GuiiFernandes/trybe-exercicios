@@ -1,69 +1,16 @@
 const express = require('express');
+const morgan = require('morgan');
 require('express-async-errors');
 
-const {validateTeam} = require('./middlewares/validateTeam');
-const {existingId} = require('./middlewares/existingId');
-const apiCredentials = require('./middlewares/apiCredentials');
 const errors = require('./middlewares/errors');
 
 const app = express();
 
-let nextId = 3;
-const teams = [
-  { id: 1, nome: 'São Paulo Futebol Clube', sigla: 'SPF' },
-  { id: 2, nome: 'Sociedade Esportiva Palmeiras', sigla: 'PAL' },
-];
-
+app.use(morgan('dev'));
+app.use(express.static('/images'));
 app.use(express.json());
 
-app.get('/teams', (req, res) => res.json(teams));
-
-app.use(apiCredentials);
-
-app.get('/teams/:id', existingId, (req, res) => {
-  const id = Number(req.params.id);
-  const team = teams.find(t => t.id === id);
-  if (team) {
-    res.json(team);
-  } else {
-    res.status(404).json({ message: 'Time não encontrado' });
-  }
-});
-
-
-app.post('/teams', validateTeam, (req, res) => {
-  if ( !(req.teams.teams.includes(req.body.sigla)
-  && teams.every(({sigla}) => sigla !== req.body.sigla)) ) {
-    return res.status(422).json({ message: 'Já existe um time com essa SIGLA ou você não tem autorização para manipula-lo' });
-  }
-  const team = { id: nextId, ...req.body };
-  teams.push(team);
-  nextId += 1;
-  res.status(201).json(team);
-});
-
-app.put('/teams/:id', existingId, validateTeam, (req, res) => {
-  const id = Number(req.params.id);
-  const team = teams.find(t => t.id === id);
-  if (team) {
-    const index = teams.indexOf(team);
-    const updated = { id, ...req.body };
-    teams.splice(index, 1, updated);
-    res.status(201).json(updated);
-  } else {
-    res.status(400);
-  }
-});
-
-app.delete('/teams/:id', existingId, (req, res) => {
-  const id = Number(req.params.id);
-  const team = teams.find(t => t.id === id);
-  if (team) {
-    const index = teams.indexOf(team);
-    teams.splice(index, 1);
-  }
-  res.sendStatus(204);
-});
+app.use('/teams', teamsRouter);
 
 app.use(errors);
 
