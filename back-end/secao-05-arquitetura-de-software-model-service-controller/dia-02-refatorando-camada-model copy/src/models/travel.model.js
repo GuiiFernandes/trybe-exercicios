@@ -1,32 +1,29 @@
 const camelize = require('camelize');
 const connection = require('./connection');
-const {
-  getFields,
-  getPlaceholders,
-} = require('../utils/formattedQueries');
+const { getFields, getPlaceholders } = require('../utils/formattedQueries');
 
-const queryFindById = `
-  SELECT
-    TR.id,
-    TR.driver_id,
-    TR.starting_address,
-    TR.ending_address,
-    TR.request_date,
-    TR.travel_status_id,
-    TS.status,
-  JSON_ARRAYAGG(
-    JSON_OBJECT(
-      'address', WP.address,
-      'stopOrder', WP.stop_order
-    )
-  ) AS waypoints
-  FROM travels AS TR INNER JOIN travel_status AS TS 
-    ON TR.travel_status_id = TS.id
-  LEFT JOIN waypoints AS WP 
-    ON WP.travel_id = TR.id
-  WHERE TR.id = ?
-  GROUP BY TR.id;
-`;
+// const queryFindById = `
+//   SELECT
+//     TR.id,
+//     TR.driver_id,
+//     TR.starting_address,
+//     TR.ending_address,
+//     TR.request_date,
+//     TR.travel_status_id,
+//     TS.status,
+//   JSON_ARRAYAGG(
+//     JSON_OBJECT(
+//       'address', WP.address,
+//       'stopOrder', WP.stop_order
+//     )
+//   ) AS waypoints
+//   FROM travels AS TR INNER JOIN travel_status AS TS
+//     ON TR.travel_status_id = TS.id
+//   LEFT JOIN waypoints AS WP
+//     ON WP.travel_id = TR.id
+//   WHERE TR.id = ?
+//   GROUP BY TR.id;
+// `;
 
 const saveWaypoints = async (waypoints, travelId) => {
   let insertPromises = [];
@@ -61,8 +58,8 @@ const insert = async (travel) => {
 
 const findById = async (travelId) => {
   const [[travel]] = await connection.execute(
-    // 'CALL findTravelById(?);',
-    queryFindById,
+    'CALL findTravelById(?);',
+    // queryFindById,
     [travelId],
   );
 

@@ -7,8 +7,8 @@
     "start": "node .",
     "debug": "nodemon --ignore coverage .",
     "lint": "eslint --no-inline-config --no-error-on-unmatched-pattern -c .eslintrc.json . --ext .js, .jsx",
-    "test": "mocha tests/**/*.js --exit",
-    "test:coverage": "nyc --all --include src/models --include src/services --include src/controllers mocha tests/unit/**/*.js --exit"
+    "test": "mocha tests/**/*.js tests/unit/**/*.js --exit",
+    "test:coverage": "nyc --all --include src/models --include src/services --include src/controllers --include src/routes --includes src/utils mocha tests/unit/**/*.js tests/integration/*.js --exit"
   },
   "keywords": [],
   "author": "",

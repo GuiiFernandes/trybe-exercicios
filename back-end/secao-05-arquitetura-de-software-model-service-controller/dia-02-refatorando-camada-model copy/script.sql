@@ -119,3 +119,29 @@ INSERT INTO cars (model, color, license_plate, year, driver_id) VALUES
     ('Chevrolet Onix', 'Prata', 'KBJ-2899', 2020, 3),
     ('Renault Logan', 'Azul', 'NFA-9035', 2019, 4),
     ('Fiat Siena', 'Cinza', 'HTH-9177', 2017, 5);
+
+USE trybecardb;
+DROP PROCEDURE IF EXISTS findTravelById;
+CREATE DEFINER=`root`@`%` PROCEDURE `findTravelById`(travelId INT)
+BEGIN
+	SELECT
+		TR.id,
+		TR.driver_id,
+		TR.starting_address,
+		TR.ending_address,
+		TR.request_date,
+		TR.travel_status_id,
+		TS.status,
+	JSON_ARRAYAGG(
+		JSON_OBJECT(
+			'address', WP.address,
+			'stopOrder', WP.stop_order
+		)
+  ) AS waypoints
+	FROM travels AS TR INNER JOIN travel_status AS TS 
+		ON TR.travel_status_id = TS.id
+	LEFT JOIN waypoints AS WP 
+		ON WP.travel_id = TR.id
+	WHERE TR.id = travelId
+	GROUP BY TR.id;
+END;

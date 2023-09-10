@@ -27,7 +27,7 @@ services:
     container_name: trybecar_db
     environment:
       MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: trybecar_db
+      MYSQL_DATABASE: trybecardb
     ports:
       - 33060:3306
     volumes:

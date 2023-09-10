@@ -13,7 +13,7 @@ router.get('/', async (_req, res) => {
 
 router.get('/:id', async (req, res) => {
   const { id } = req.params;
-  const car = await genericCruds.findById({ table, id });
+  const [car] = await genericCruds.findById({ table, id });
   if (!car) return res.status(404).json({ message: 'Car not found' });
   return res.status(200).json(car);
 });
