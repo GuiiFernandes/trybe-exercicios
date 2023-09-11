@@ -1,8 +1,8 @@
-const { validateNewCar } = require('./validations/validationInputs');
+const { validates } = require('./validations');
 const { genericCruds } = require('../models');
 
 const createCar = async ({ table, newCar }) => {
-  const erro = validateNewCar(newCar);
+  const erro = validates.validateNewCar(newCar);
   if (erro) return { status: erro.status, data: { message: erro.message } };
   const [driver] = await genericCruds.findById({ table: 'drivers', id: newCar.driverId });
   if (!driver) return { status: 400, data: { message: 'Driver not found' } };
