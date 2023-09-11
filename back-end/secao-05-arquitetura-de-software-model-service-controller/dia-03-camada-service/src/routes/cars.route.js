@@ -30,8 +30,10 @@ router.delete('/:id', async (req, res) => {
 router.post('/', async (req, res) => {
   const newCar = req.body;
   // const car = await genericCruds.create({ table, data });
-  const { status, data } = await carService.createCar({ table, newCar });
-  res.status(status).json(data);
+  const result = await carService.createCar({ table, newCar });
+  res.status(result.status).json(result.data);
 });
+
+// router.put()
 
 module.exports = router;

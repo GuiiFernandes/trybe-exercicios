@@ -3,7 +3,7 @@ const carsFromModel = [
     "id": 1,
     "model": "Renault Sandero",
     "color": "Branco",
-    "licensePlate": "NCA-0956",
+    "licensePlate": "NCA0956",
     "year": 2019,
     "driverId": 1
   },
@@ -11,7 +11,7 @@ const carsFromModel = [
     "id": 2,
     "model": "Volkswagen Gol",
     "color": "Vermelho",
-    "licensePlate": "DZG-4376",
+    "licensePlate": "DZG4376",
     "year": 2015,
     "driverId": 2
   },
@@ -22,7 +22,7 @@ const carsFromDb = [
     "id": 1,
     "model": "Renault Sandero",
     "color": "Branco",
-    "license_plate": "NCA-0956",
+    "license_plate": "NCA0956",
     "year": 2019,
     "driver_id": 1
   },
@@ -30,7 +30,7 @@ const carsFromDb = [
     "id": 2,
     "model": "Volkswagen Gol",
     "color": "Vermelho",
-    "license_plate": "DZG-4376",
+    "license_plate": "DZG4376",
     "year": 2015,
     "driver_id": 2
   },

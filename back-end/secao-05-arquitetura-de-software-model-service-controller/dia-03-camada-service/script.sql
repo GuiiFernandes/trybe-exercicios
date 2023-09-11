@@ -114,11 +114,11 @@ INSERT INTO drivers (name) VALUES
 
 -- Pré populando a cars
 INSERT INTO cars (model, color, license_plate, year, driver_id) VALUES 
-	('Renault Sandero', 'Branco', 'NCA-0956', 2019, 1),
-    ('Volkswagen Gol', 'Vermelho', 'DZG-4376', 2015, 2),
-    ('Chevrolet Onix', 'Prata', 'KBJ-2899', 2020, 3),
-    ('Renault Logan', 'Azul', 'NFA-9035', 2019, 4),
-    ('Fiat Siena', 'Cinza', 'HTH-9177', 2017, 5);
+	('Renault Sandero', 'Branco', 'NCA0956', 2019, 1),
+    ('Volkswagen Gol', 'Vermelho', 'DZG4376', 2015, 2),
+    ('Chevrolet Onix', 'Prata', 'KBJ2899', 2020, 3),
+    ('Renault Logan', 'Azul', 'NFA9035', 2019, 4),
+    ('Fiat Siena', 'Cinza', 'HTH9177', 2017, 5);
 
 USE trybecardb;
 DROP PROCEDURE IF EXISTS findTravelById;

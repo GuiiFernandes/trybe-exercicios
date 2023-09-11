@@ -1,4 +1,4 @@
-// const connection = require('./connection');
+const connection = require('./connection');
 
 // const findAll = async () => {
 //   const [cars] = await connection.execute(
@@ -19,3 +19,15 @@
 //   findAll,
 //   findById,
 // };
+
+const findByLicensePlate = async (licensePlate) => {
+  const [[car]] = await connection.execute(
+    'SELECT * FROM cars WHERE license_plate = ?',
+    [licensePlate],
+  );
+  return !!car;
+};
+
+module.exports = {
+  findByLicensePlate,
+};
