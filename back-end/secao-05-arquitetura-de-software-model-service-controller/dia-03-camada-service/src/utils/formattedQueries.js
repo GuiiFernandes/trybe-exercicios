@@ -12,7 +12,14 @@ const getPlaceholders = (data) => {
   return stringValues;
 };
 
+const getUpdateFields = (data) => {
+  const fields = (Object.keys(snakeize(data)));
+  const stringFields = fields.map((field) => `${field} = ?`).join(', ');
+  return stringFields;
+};
+
 module.exports = {
   getFields,
   getPlaceholders,
+  getUpdateFields,
 };
