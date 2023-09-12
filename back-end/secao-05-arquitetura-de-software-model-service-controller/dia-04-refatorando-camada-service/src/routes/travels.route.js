@@ -1,5 +1,4 @@
 const express = require('express');
-const camelize = require('camelize');
 
 const { travelModel } = require('../models');
 const { travelService } = require('../service');
@@ -9,21 +8,22 @@ const router = express.Router();
 router.post('/passengers/:passengerId/request/travel', async (req, res) => {
   const { passengerId } = req.params;
   const { startingAddress, endingAddress, waypoints } = req.body;
-
-  const { status, message } = await travelService.requestTravel({
-    passengerId,
+  const newTravel = {
+    passengerId: +passengerId,
     startingAddress,
     endingAddress,
     waypoints,
-  });
+  };
 
-  return res.status(status).json(message);
+  const { status, data } = await travelService.requestTravel(newTravel);
+
+  return res.status(status).json(data);
 });
 
 router.get('/drivers/open/travels', async (_req, res) => {
   const WAITING_DRIVER = 1;
-  const travelsFromDB = await travelModel.findByStatusId(WAITING_DRIVER);
-  res.status(200).json(camelize(travelsFromDB));
+  const { status, data } = await travelService.getOpenTravels(WAITING_DRIVER);
+  res.status(status).json(data);
 });
 
 router.patch('/drivers/:driverId/travels/:travelId', async (req, res) => {

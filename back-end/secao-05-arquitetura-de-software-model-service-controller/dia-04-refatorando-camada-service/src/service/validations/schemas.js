@@ -23,7 +23,7 @@ const waypointsSchema = Joi.object({
 });
 
 const addRequestTravelSchema = Joi.object({
-  passagerId: idSchema,
+  passengerId: idSchema,
   startingAddress: pointSchema,
   endingAddress: pointSchema.invalid(Joi.ref('startingAddress')),
   waypoints: Joi.array().items(waypointsSchema),
