@@ -1,0 +1,22 @@
+exerc. 1 (
+  Qual é a importância da arquitetura de software no desenvolvimento de um sistema?
+)
+  - Crucial para a definição da estrutura básica do sistema e de como os componentes interagem entre si. Trazendo organização, escalabilidade, segurança, boa performance e fácil manutenção do seu sistema, além de possibilitar implementar novas funcionalidades sem ter que mexer muito no que já existe.
+exerc. 2 (
+  Quais são os principais objetivos da arquitetura de software?
+)
+  - Garantir escalabilidade, segurança, robustez e performance, além de possibilitar fácil manutençao e implementação de novas funcionalidades sem ter que mexer muito no que já existe.
+exerc. 3 (
+  Quais são os possíveis desafios ao realizar alterações na arquitetura de um sistema que já está em produção?
+)
+  - Garantir a compatibilidade dos componentes já existentes, risco de criar problemas onde não tinha, custo de manuntenção sem interromper o funcionamento do sistema.
+exerc. 4 (
+  O que é a camada de model na arquitetura em camadas de software?
+)
+  - Agrupa funções que lidam com a leitura e escrita de dados. É a parte do sistema que interage com o banco de dados realizando o CRUD nele (create, read, update e delete).
+
+exerc. 5 (
+  Crie a função na camada de model responsável por deletar uma pessoa passageira.
+  Implemente a rota DELETE /passenger/:id para deletar uma pessoa passageira. Ao remover deve retornar o status HTTP 204.
+)
+  - feito no projeto.
