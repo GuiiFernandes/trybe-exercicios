@@ -13,7 +13,7 @@ router.get('/', async (_req, res) => {
 
 router.get('/:id', async (req, res) => {
   const { id } = req.params;
-  const passenger = await genericCruds.findById({ table, id });
+  const [passenger] = await genericCruds.findById({ table, id });
   if (!passenger) return res.status(404).json({ message: 'Passenger not found' });
   return res.status(200).json(passenger);
 });
@@ -26,7 +26,8 @@ router.delete('/:id', async (req, res) => {
 });
 
 router.post('/', async (req, res) => {
-  const data = req.body;
+  const { name, email, phone } = req.body;
+  const data = { name, email, phone };
   const passenger = await genericCruds.create({ table, data });
   res.status(201).json({
     passenger,

@@ -113,7 +113,7 @@ describe('Testes de integração: CARS ROUTES', function () {
       expect(response.status).to.be.equal(400);
       expect(response.body).to.be.an('object');
       expect(response.body).to.be.deep.equal({
-        message: '"year" must be greater than or equal to 2015',
+        message: `"year" must be greater than or equal to ${new Date().getFullYear() - 10}`,
       });
     });
   });

@@ -1,7 +1,8 @@
 const express = require('express');
 const camelize = require('camelize');
 
-const { genericCruds, travelModel } = require('../models');
+const { travelModel } = require('../models');
+const { travelService } = require('../service');
 
 const router = express.Router();
 
@@ -9,19 +10,14 @@ router.post('/passengers/:passengerId/request/travel', async (req, res) => {
   const { passengerId } = req.params;
   const { startingAddress, endingAddress, waypoints } = req.body;
 
-  const passenger = await genericCruds.findById({ table: 'passengers', id: passengerId });
-  if (!passenger.length) { return res.status(404).json({ message: 'Passenger not found' }); }
-
-  const travelId = await travelModel.insert({
+  const { status, message } = await travelService.requestTravel({
     passengerId,
     startingAddress,
     endingAddress,
     waypoints,
   });
 
-  const newTravel = await travelModel.findById(travelId);
-
-  return res.status(201).json(newTravel);
+  return res.status(status).json(message);
 });
 
 router.get('/drivers/open/travels', async (_req, res) => {

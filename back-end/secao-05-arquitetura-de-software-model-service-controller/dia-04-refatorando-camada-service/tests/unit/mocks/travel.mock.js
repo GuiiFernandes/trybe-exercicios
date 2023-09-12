@@ -61,6 +61,12 @@ const travelByStatusFromModel = [
   },
 ];
 
+const travelInputData = {
+      passengerId: 1,
+      startingAddress: 'starting street',
+      endingAddress: 'end street',
+    };
+
 module.exports = {
   travelIdFromDB,
   travelIdFromModel,
@@ -68,4 +74,5 @@ module.exports = {
   travelFromModel,
   travelByStatusFromDB,
   travelByStatusFromModel,
+  travelInputData,
 };

@@ -3,19 +3,19 @@ const { genericCruds } = require('../models');
 const response = require('../utils/serviceResponses');
 
 const validateCarData = async (newData) => {
-  let erro = validates.validateNewCar(newData);
-  if (erro) return response({ message: erro.message }).BAD_REQUEST;
-  erro = validates.validateLicensePlate(newData.licensePlate);
-  if (erro) return response({ message: erro.message }).BAD_REQUEST;
+  let error = validates.validateNewCar(newData);
+  if (error) return error;
+  error = validates.validateLicensePlate(newData.licensePlate);
+  if (error) return error;
   const [driver] = await genericCruds.findById({ table: 'drivers', id: newData.driverId });
   if (!driver) return response({ message: 'Driver not found' }).BAD_REQUEST;
 };
 
 const createCar = async ({ table, newCar }) => {
-  let erro = await validateCarData(newCar);
-  if (erro) return erro;
-  erro = await validates.validateExistCar(newCar.licensePlate);
-  if (erro) return response({ message: erro.message }).CONFLICT;
+  let error = await validateCarData(newCar);
+  if (error) return error;
+  error = await validates.validateExistCar(newCar.licensePlate);
+  if (error) return error;
   const car = await genericCruds.create({ table, data: newCar });
   return response({ car, message: 'Car created successfully' }).CREATED;
 };
