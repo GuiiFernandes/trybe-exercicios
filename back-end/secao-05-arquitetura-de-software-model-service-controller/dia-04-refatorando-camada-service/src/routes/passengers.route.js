@@ -29,6 +29,7 @@ router.post('/', async (req, res) => {
   const { name, email, phone } = req.body;
   const data = { name, email, phone };
   const passenger = await genericCruds.create({ table, data });
+  if (!passenger) return res.status(400).json({ message: 'Passenger not created' });
   res.status(201).json({
     passenger,
     message: 'Passenger created successfully',

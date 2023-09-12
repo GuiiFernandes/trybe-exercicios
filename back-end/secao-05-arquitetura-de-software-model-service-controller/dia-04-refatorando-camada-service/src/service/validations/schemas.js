@@ -29,7 +29,12 @@ const addRequestTravelSchema = Joi.object({
   waypoints: Joi.array().items(waypointsSchema),
 });
 
+const addDriverSchema = Joi.object({
+  name: Joi.string().min(3),
+});
+
 module.exports = {
   addCarSchema,
   addRequestTravelSchema,
+  addDriverSchema,
 };

@@ -15,8 +15,11 @@ describe('Testes de integração: CARS ROUTES', function () {
       sinon.stub(connection, 'execute').resolves([carsFromDb]);
       const response = await chai.request(app).get('/cars');
       expect(response.status).to.be.equal(200);
-      expect(response.body).to.be.an('array');
-      expect(response.body).to.be.deep.equal(carsFromModel);
+      expect(response.body).to.be.an('object');
+      expect(response.body).to.be.deep.equal({
+        cars: carsFromModel,
+        message: 'Cars found successfully',
+      });
     });
   });
 
@@ -26,7 +29,10 @@ describe('Testes de integração: CARS ROUTES', function () {
       const response = await chai.request(app).get('/cars/2');
       expect(response.status).to.be.equal(200);
       expect(response.body).to.be.an('object');
-      expect(response.body).to.be.deep.equal(carsFromModel[1]);
+      expect(response.body).to.be.deep.equal({
+        car: carsFromModel[1],
+        message: 'Car found successfully',
+      });
     });
     it('Retorna status 404 e a mensagem de erro ao buscar o id 100', async function () {
       sinon.stub(connection, 'execute').resolves([[]]);

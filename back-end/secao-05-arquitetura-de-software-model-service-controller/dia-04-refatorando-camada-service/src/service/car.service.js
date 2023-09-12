@@ -17,18 +17,19 @@ const createCar = async ({ table, newCar }) => {
   error = await validates.validateExistCar(newCar.licensePlate);
   if (error) return error;
   const car = await genericCruds.create({ table, data: newCar });
+  if (!car) return response({ message: 'Car not created' }).BAD_REQUEST;
   return response({ car, message: 'Car created successfully' }).CREATED;
 };
 
 const getAllCars = async ({ table }) => {
   const cars = await genericCruds.findAll({ table });
-  return response(cars).SUCCESS;
+  return response({ cars, message: 'Cars found successfully' }).SUCCESS;
 };
 
 const getCarById = async ({ table, id }) => {
   const [car] = await genericCruds.findById({ table, id });
   if (!car) return response({ message: 'Car not found' }).NOT_FOUND;
-  return response(car).SUCCESS;
+  return response({ car, message: 'Car found successfully' }).SUCCESS;
 };
 
 const updateCar = async ({ table, id, newData }) => {

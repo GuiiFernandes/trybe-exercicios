@@ -1,4 +1,4 @@
-const { addCarSchema, addRequestTravelSchema } = require('./schemas');
+const { addCarSchema, addRequestTravelSchema, addDriverSchema } = require('./schemas');
 const response = require('../../utils/serviceResponses');
 
 const validateNewCar = (newCar) => {
@@ -11,7 +11,13 @@ const validateNewTravel = (newTravel) => {
   if (error) return response({ message: error.message }).BAD_REQUEST;
 };
 
+const validateNewDriver = (newDriver) => {
+  const { error } = addDriverSchema.validate(newDriver);
+  if (error) return response({ message: error.message }).BAD_REQUEST;
+};
+
 module.exports = {
   validateNewCar,
   validateNewTravel,
+  validateNewDriver,
 };

@@ -32,6 +32,7 @@ const create = async ({ table, data }) => {
   const values = Object.values(data);
   const query = `INSERT INTO ${table} (${fields}) VALUES (${placeholders})`;
   const [{ insertId }] = await connection.execute(query, values);
+  if (!insertId) return undefined;
   return {
     id: insertId,
     ...data,
