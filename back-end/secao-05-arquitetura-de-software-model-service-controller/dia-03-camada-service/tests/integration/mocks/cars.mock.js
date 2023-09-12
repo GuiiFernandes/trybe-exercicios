@@ -44,8 +44,17 @@ const newCarMock = {
   "driverId": 3
 }
 
+const updatedCarMock = {
+  "model": "VW Voyage",
+  "color": "Branco",
+  "licensePlate": "NCA0956",
+  "year": 2017,
+  "driverId": 1
+}
+
 module.exports = {
   carsFromModel,
   newCarMock,
   carsFromDb,
+  updatedCarMock,
 };

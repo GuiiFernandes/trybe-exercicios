@@ -38,7 +38,7 @@ const create = async ({ table, data }) => {
   };
 };
 
-const update = async ({ table, id, data }) => {
+const update = async ({ table, id, newData: data }) => {
   const fields = getUpdateFields(data);
   const values = Object.values(data);
   const query = `UPDATE ${table} SET ${fields} WHERE id = ?`;

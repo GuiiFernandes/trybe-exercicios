@@ -2,7 +2,7 @@ const chai = require('chai');
 const chaiHttp = require('chai-http');
 const sinon = require('sinon');
 const connection = require('../../src/models/connection');
-const { carsFromModel, newCarMock, carsFromDb } = require('./mocks/cars.mock');
+const { carsFromModel, newCarMock, carsFromDb, updatedCarMock } = require('./mocks/cars.mock');
 const app = require('../../src/app');
 const { driversListMock } = require('./mocks/drivers.mock');
 
@@ -58,9 +58,9 @@ describe('Testes de integração: CARS ROUTES', function () {
     it('Inseri corretamente um veículo', async function () {
       sinon.stub(connection, 'execute')
         .onFirstCall()
-        .resolves([[]])
-        .onSecondCall()
         .resolves([[driversListMock[2]]])
+        .onSecondCall()
+        .resolves([[]])
         .onThirdCall()
         .resolves([{ insertId: 3 }]);
       const response = await chai.request(app)
@@ -90,6 +90,8 @@ describe('Testes de integração: CARS ROUTES', function () {
       const newCar = { ...newCarMock, licensePlate: 'NCA0956' };
       sinon.stub(connection, 'execute')
         .onFirstCall()
+        .resolves([[driversListMock[2]]])
+        .onSecondCall()
         .resolves([[carsFromDb[0]]]);
       const response = await chai.request(app)
         .post('/cars')
@@ -112,6 +114,40 @@ describe('Testes de integração: CARS ROUTES', function () {
       expect(response.body).to.be.an('object');
       expect(response.body).to.be.deep.equal({
         message: '"year" must be greater than or equal to 2015',
+      });
+    });
+  });
+
+  describe('UPDATE /cars/:id', function () {
+    it('Atualiza corretamente o veículo de id 1', async function () {
+      sinon.stub(connection, 'execute')
+        .onFirstCall()
+        .resolves([[driversListMock[0]]])
+        .onSecondCall()
+        .resolves([{ affectedRows: 1 }]);
+      const response = await chai.request(app)
+        .put('/cars/1')
+        .send(updatedCarMock);
+      expect(response.status).to.be.equal(200);
+      expect(response.body).to.be.an('object');
+      expect(response.body).to.be.deep.equal({
+        car: { id: '1', ...updatedCarMock },
+        message: 'Car updated successfully',
+      });
+    });
+    it('Retorna o erro se tentar alterar o id 100', async function () {
+      sinon.stub(connection, 'execute')
+        .onFirstCall()
+        .resolves([[driversListMock[0]]])
+        .onSecondCall()
+        .resolves([{ affectedRows: 0 }]);
+      const response = await chai.request(app)
+        .put('/cars/100')
+        .send(updatedCarMock);
+      expect(response.status).to.be.equal(404);
+      expect(response.body).to.be.an('object');
+      expect(response.body).to.be.deep.equal({
+        message: 'Car not found',
       });
     });
   });

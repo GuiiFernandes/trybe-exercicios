@@ -34,7 +34,7 @@ const getCarById = async ({ table, id }) => {
 const updateCar = async ({ table, id, newData }) => {
   const erro = await validateCarData(newData);
   if (erro) return erro;
-  const isUpdate = await genericCruds.updateById({ table, id, newData });
+  const isUpdate = await genericCruds.update({ table, id, newData });
   if (!isUpdate) return response({ message: 'Car not found' }).NOT_FOUND;
   const body = {
     car: { id, ...newData },
