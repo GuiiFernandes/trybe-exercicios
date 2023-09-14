@@ -1,6 +1,8 @@
 const express = require('express');
 
 const { genericCruds } = require('../models');
+const { travelController } = require('../controllers');
+const middles = require('../middlewares');
 
 const table = 'passengers';
 
@@ -35,5 +37,11 @@ router.post('/', async (req, res) => {
     message: 'Passenger created successfully',
   });
 });
+
+router.post(
+  '/:passengerId/request/travel',
+  middles.travelFieldsExists,
+  travelController.createTravel,
+);
 
 module.exports = router;

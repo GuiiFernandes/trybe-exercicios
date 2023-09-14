@@ -1,7 +1,7 @@
 const express = require('express');
 
 const { genericCruds } = require('../models');
-const { carService } = require('../service');
+const { carService } = require('../services');
 
 const table = 'cars';
 

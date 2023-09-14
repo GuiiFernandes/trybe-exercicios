@@ -1,14 +1,19 @@
 const { expect } = require('chai');
 const sinon = require('sinon');
 
-const { travelService } = require('../../../src/service');
+const { travelService } = require('../../../src/services');
 const { genericCruds, travelModel } = require('../../../src/models');
 const { passengerMock } = require('../mocks/passengers.mock');
-const { travelIdFromModel, travelFromModel, travelInputData } = require('../mocks/travel.mock');
+const {
+  travelIdFromModel,
+  travelFromModel,
+  travelInputData,
+} = require('../mocks/travel.mock');
 
 describe('Testes Unitários - TRAVEL SERVICE:', function () {
   it('Inserindo travel sem waypoints com sucesso', async function () {
-    sinon.stub(genericCruds, 'findById')
+    sinon
+      .stub(genericCruds, 'findById')
       .onFirstCall()
       .resolves(passengerMock)
       .onSecondCall()
@@ -25,11 +30,14 @@ describe('Testes Unitários - TRAVEL SERVICE:', function () {
   it('Inserindo travel com waypoints com sucesso', async function () {
     const inputData = {
       ...travelInputData,
-      waypoints: [{ address: 'Rua dos bobos', stopOrder: 1 },
-        { address: 'Rua dos espertos', stopOrder: 2 }],
+      waypoints: [
+        { address: 'Rua dos bobos', stopOrder: 1 },
+        { address: 'Rua dos espertos', stopOrder: 2 },
+      ],
     };
 
-    sinon.stub(genericCruds, 'findById')
+    sinon
+      .stub(genericCruds, 'findById')
       .onFirstCall()
       .resolves(passengerMock)
       .onSecondCall()

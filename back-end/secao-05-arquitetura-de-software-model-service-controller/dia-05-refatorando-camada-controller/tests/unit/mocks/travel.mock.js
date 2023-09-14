@@ -67,6 +67,19 @@ const travelInputData = {
   endingAddress: 'end street',
 };
 
+const travelFromServiceSuccess = {
+  status: 201,
+  data: { travel: travelFromModel, message: 'Travel created successfully' },
+};
+const travelFromServiceBadRequest = {
+  status: 400,
+  data: { message: 'message' },
+};
+const travelFromServiceNotFound = {
+  status: 404,
+  data: { message: 'message' },
+};
+
 module.exports = {
   travelIdFromDB,
   travelIdFromModel,
@@ -75,4 +88,7 @@ module.exports = {
   travelByStatusFromDB,
   travelByStatusFromModel,
   travelInputData,
+  travelFromServiceSuccess,
+  travelFromServiceBadRequest,
+  travelFromServiceNotFound,
 };
