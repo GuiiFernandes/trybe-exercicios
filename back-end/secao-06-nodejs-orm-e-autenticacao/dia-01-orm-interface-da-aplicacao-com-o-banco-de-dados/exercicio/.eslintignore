@@ -1,0 +1,6 @@
+node_modules
+tests/unit/mocks/**
+tests/integration/mocks/**
+src/models/**
+src/migrations/**
+src/seeders/**

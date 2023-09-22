@@ -1,0 +1,8 @@
+node_modules
+coverage
+.nyc*
+tests/unit/mocks/**
+tests/integration/mocks/**
+src/models/**
+src/migrations/**
+src/seeders/**
