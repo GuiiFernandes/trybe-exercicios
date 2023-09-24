@@ -2,10 +2,10 @@ version: "3"
 
 services:
   db:
-    image: mysql:latest
-    restart: always
-    env_file:
-      - .env
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: library
     volumes:
       - ./data:/var/lib/mysql
     ports:
