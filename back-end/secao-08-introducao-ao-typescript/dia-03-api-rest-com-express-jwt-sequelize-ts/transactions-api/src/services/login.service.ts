@@ -16,6 +16,7 @@ async function verifyLogin({ email, password }: Login): Promise<ServiceResponse<
   uma pessoa usuária que possua o valor da coluna email e password igual ao valor
   que chegou como parâmetro. */
   const foundUser = await UserModel.findOne({ where: { email, password } });
+  // Não é uma boa prática buscar direto pelo e-mail e senha no banco de dados.
   
   /* Devemos verificar se foundUser é diferente de nulo */
   if (!foundUser) {
