@@ -50,8 +50,9 @@ describe('POST /login', function () {
 
   it('ao receber um e-mail existente e uma senha errada, retorne um erro', async function () {
     // Arrange
-    const httpRequestBody = loginMock.notExistingUserBody
-    sinon.stub(UserModel, 'findOne').resolves(null);
+    const httpRequestBody = loginMock.existingUserWithWrongPasswordBody
+    const mockFindOneReturn = UserModel.build(loginMock.existingUser);
+    sinon.stub(UserModel, 'findOne').resolves(mockFindOneReturn);
 
     // Act
     const httpResponse = await chai.request(app).post('/login')

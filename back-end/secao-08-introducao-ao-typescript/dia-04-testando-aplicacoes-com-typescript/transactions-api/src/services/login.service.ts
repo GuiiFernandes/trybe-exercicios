@@ -1,3 +1,5 @@
+import bcrypt from 'bcryptjs';
+
 import jwtUtil from '../utils/jwt.util';
 import { ServiceResponse } from '../types/ServiceResponse';
 import UserModel from '../database/models/user.model';
@@ -15,11 +17,11 @@ async function verifyLogin({ email, password }: Login): Promise<ServiceResponse<
   /* Caso o email e password sejam válidos, devemos buscar no banco para ver se existe
   uma pessoa usuária que possua o valor da coluna email e password igual ao valor
   que chegou como parâmetro. */
-  const foundUser = await UserModel.findOne({ where: { email, password } });
+  const foundUser = await UserModel.findOne({ where: { email } });
   // Não é uma boa prática buscar direto pelo e-mail e senha no banco de dados.
   
   /* Devemos verificar se foundUser é diferente de nulo */
-  if (!foundUser) {
+  if (!foundUser || !bcrypt.compareSync(password, foundUser.dataValues.password)) {
     /* Caso seja diferente, retornamos esse objeto no formato ServiceResponse, sinalizando um erro com uma mensagem específica para esse caso, e o status UNAUTHORIZED que será mapeado para o status 403 pela função mapStatusHTTP implementada anteriormente! Mais uma vez, a tipagem é definida pela inferência! */
     return { status: 'UNAUTHORIZED', data: { message: 'E-mail ou senha inválidos' } };
   }

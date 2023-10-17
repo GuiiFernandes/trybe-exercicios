@@ -1,5 +1,6 @@
 const validEmail = 'user1@email.com';
 const validPassword = 'ch4ng3m3';
+const hashedPassword = '$2a$10$lQGsGScdxhjGRuYVJX3PX.347IWLNiSk6hOiMmjxlzLEI32lg5LMW';
 
 const noEmailLoginBody = { email: '', password: validPassword };
 
@@ -11,7 +12,7 @@ const existingUserWithWrongPasswordBody = { email: validEmail, password: 'wrong_
 const existingUser = { 
   id: 1, 
   email: validEmail,
-  password: validPassword,
+  password: hashedPassword,
   name: 'user1' 
 };
 
