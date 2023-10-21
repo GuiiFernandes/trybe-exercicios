@@ -1,4 +1,4 @@
-class SuperClass2 {
+abstract class SuperClass2 {
   constructor(public isSuper: boolean = true) { }
   protected sayHello(): void {
     console.log('Olá mundo!');
