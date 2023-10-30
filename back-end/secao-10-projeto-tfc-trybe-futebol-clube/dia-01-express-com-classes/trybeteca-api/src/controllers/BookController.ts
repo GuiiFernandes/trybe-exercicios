@@ -44,4 +44,14 @@ export default class BookController {
     }
     return res.status(200).json(serviceResponse.data);
   }
+
+  public async searchBook(req: Request, res: Response): Promise<Response> {
+    const { q } = req.query;
+    const query = typeof q === 'string' ? q : '';
+    const serviceResponse = await this.bookService.searchBook(query);
+    if (serviceResponse.status !== 'SUCCESSFUL') {
+      return res.status(mapStatusHTTP(serviceResponse.status)).json(serviceResponse.data);
+    }
+    return res.status(200).json(serviceResponse.data);
+  }
 }

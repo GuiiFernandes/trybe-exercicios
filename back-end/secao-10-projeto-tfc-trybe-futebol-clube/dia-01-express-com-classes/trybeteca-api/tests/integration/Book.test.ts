@@ -125,5 +125,26 @@ describe('Books Test', function() {
     expect(status).to.equal(404);
     expect(body.message).to.equal('Book 1 not found');
   });
+  it('should find a book with author Tolki', async function() {
+    sinon.stub(SequelizeBook, 'findAll').resolves(books as any);
+
+    const { status, body } = await chai
+      .request(app)
+      .get('/books/search?q=Tolki');
+
+    expect(status).to.equal(200);
+    expect(body).to.deep.equal(books);
+  });
+
+  it('should return not found when there is no book with the author xablau', async function() {
+    sinon.stub(SequelizeBook, 'findAll').resolves([]);
+
+    const { status, body } = await chai
+      .request(app)
+      .get('/books/search?q=xablau')
+
+    expect(status).to.equal(404);
+    expect(body.message).to.equal('Author xablau not found');
+  });
   afterEach(sinon.restore);
 });

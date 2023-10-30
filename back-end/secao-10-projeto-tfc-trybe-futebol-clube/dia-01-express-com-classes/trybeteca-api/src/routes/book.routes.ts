@@ -13,6 +13,11 @@ router.post(
 );
 
 router.get(
+  '/search',
+  (req: Request, res: Response) => bookController.searchBook(req, res),
+);
+
+router.get(
   '/',
   (req: Request, res: Response) => bookController.getAllBooks(req, res),
 );

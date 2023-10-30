@@ -1,3 +1,4 @@
+import { Op } from 'sequelize';
 import SequelizeBook from '../database/models/SequelizeBook';
 import { IBook } from '../interfaces/books/IBook';
 import { IBookModel } from '../interfaces/books/IBookModel';
@@ -34,5 +35,12 @@ export default class BookModel implements IBookModel {
 
   async delete(id: IBook['id']): Promise<number> {
     return this.model.destroy({ where: { id } });
+  }
+
+  async searchBook(q: string): Promise<IBook[]> {
+    const dbData = await this.model.findAll({
+      where: { author: { [Op.like]: `%${q}%` } },
+    });
+    return dbData.map(({ id, title, price, author, isbn }) => ({ id, title, price, author, isbn }));
   }
 }

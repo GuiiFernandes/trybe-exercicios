@@ -49,4 +49,10 @@ export default class BookService {
     await this.bookModel.delete(id);
     return { status: 'SUCCESSFUL', data: { message: 'Book deleted' } };
   }
+
+  public async searchBook(q: string): Promise<ServiceResponse<IBook[]>> {
+    const books = await this.bookModel.searchBook(q);
+    if (!books.length) return { status: 'NOT_FOUND', data: { message: `Author ${q} not found` } };
+    return { status: 'SUCCESSFUL', data: books };
+  }
 }
