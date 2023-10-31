@@ -146,5 +146,6 @@ describe('Books Test', function() {
     expect(status).to.equal(404);
     expect(body.message).to.equal('Author xablau not found');
   });
+  
   afterEach(sinon.restore);
 });
