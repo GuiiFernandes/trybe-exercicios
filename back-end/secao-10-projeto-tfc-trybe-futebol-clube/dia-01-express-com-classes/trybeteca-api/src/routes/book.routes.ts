@@ -27,6 +27,12 @@ router.get(
   (req: Request, res: Response) => bookController.getBookById(req, res),
 );
 
+router.patch(
+  '/:id/discount',
+  Validations.validateDiscount,
+  (req: Request, res: Response) => bookController.updateBookDiscount(req, res),
+);
+
 router.put(
   '/:id',
   Validations.validateBook,

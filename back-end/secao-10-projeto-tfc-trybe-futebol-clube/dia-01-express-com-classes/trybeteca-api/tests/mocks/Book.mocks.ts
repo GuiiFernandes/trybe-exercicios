@@ -1,7 +1,7 @@
 const book = {
   id: 1,
   title: 'Senhor dos Anéis',
-  price: 22,
+  price: 20,
   author: 'J. R. R. Tolkien',
   isbn: '234234'
 };

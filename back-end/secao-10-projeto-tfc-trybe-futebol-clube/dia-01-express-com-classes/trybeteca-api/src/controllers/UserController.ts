@@ -24,6 +24,12 @@ export default class UserController {
     return res.status(200).json(serviceResponse.data);
   }
 
+  async createUser(req: Request, res: Response): Promise<Response> {
+    const { name, email, password } = req.body;
+    const serviceResponse = await this.userService.create({ name, email, password });
+    return res.status(mapStatusHTTP(serviceResponse.status)).json(serviceResponse.data);
+  }
+
   async login(req: Request, res: Response): Promise<Response> {
     const { email, password } = req.body;
     const serviceResponse = await this.authService.login(email, password);

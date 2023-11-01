@@ -11,6 +11,14 @@ class Validations {
 
     next();
   }
+
+  static validateDiscount(req: Request, res: Response, next: NextFunction): Response | void {
+    const { discount } = req.body;
+    if (discount < 0 || discount > 0.7) {
+      return res.status(400).json({ message: 'Discount must be between 0 and 0.7' });
+    }
+    next();
+  }
 }
 
 export default Validations;

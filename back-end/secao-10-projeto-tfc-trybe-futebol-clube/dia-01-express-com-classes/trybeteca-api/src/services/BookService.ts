@@ -55,4 +55,19 @@ export default class BookService {
     if (!books.length) return { status: 'NOT_FOUND', data: { message: `Author ${q} not found` } };
     return { status: 'SUCCESSFUL', data: books };
   }
+
+  async updateBookDiscount(id: number, discount: number): Promise<ServiceResponse<ServiceMessage>> {
+    const bookExists = await this.bookModel.findById(id);
+    
+    if (!bookExists) return { status: 'NOT_FOUND', data: { message: `Book ${id} not found` } };
+    const price = bookExists.price * (1 - discount);
+    const updatedBook = await this.bookModel.update(id, { ...bookExists, price });
+    if (!updatedBook) {
+      return {
+        status: 'CONFLICT',
+        data: { message: `There are no updates to perform in Book ${id}` },
+      };
+    }
+    return { status: 'SUCCESSFUL', data: { message: 'Book updated' } };
+  }
 }

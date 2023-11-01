@@ -1,6 +1,7 @@
 import { ICRUDModelReader } from '../ICRUDModel';
-import { IUser } from './IUser';
+import { IUser, IUserReq, IUserResponse } from './IUser';
 
 export type IUserModel = ICRUDModelReader<IUser> & {
-  findByEmail(email: string): Promise<IUser | null>
+  findByEmail(email: string): Promise<IUser | null>,
+  create(user: IUserReq): Promise<IUserResponse>,
 };

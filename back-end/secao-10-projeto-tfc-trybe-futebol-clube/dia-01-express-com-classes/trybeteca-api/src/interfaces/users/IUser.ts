@@ -11,5 +11,9 @@ export interface IUser extends Identifiable, ILogin {
   name: string
 }
 
+export interface IUserReq extends ILogin {
+  name: string
+}
+
 // usuário a ser retornado pela API
 export type IUserResponse = Omit<IUser, 'password'>;

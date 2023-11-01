@@ -1,5 +1,5 @@
 import SequelizeUser from '../database/models/SequelizeUser';
-import { IUser } from '../interfaces/users/IUser';
+import { IUser, IUserReq, IUserResponse } from '../interfaces/users/IUser';
 import { IUserModel } from '../interfaces/users/IUserModel';
 
 export default class UserModel implements IUserModel {
@@ -23,5 +23,11 @@ export default class UserModel implements IUserModel {
     const user = await this.model.findOne({ where: { email } });
     if (!user) return null;
     return user.toJSON();
+  }
+
+  async create(user: IUserReq): Promise<IUserResponse> {
+    const createdUser = await this.model.create(user);
+    const { id, email, name } = createdUser;
+    return { id, email, name };
   }
 }

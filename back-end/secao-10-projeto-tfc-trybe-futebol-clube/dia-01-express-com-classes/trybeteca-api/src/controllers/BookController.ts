@@ -54,4 +54,14 @@ export default class BookController {
     }
     return res.status(200).json(serviceResponse.data);
   }
+
+  async updateBookDiscount(req: Request, res: Response): Promise<Response> {
+    const { discount } = req.body;
+    const id = Number(req.params.id);
+    const serviceResponse = await this.bookService.updateBookDiscount(id, discount);
+    if (serviceResponse.status !== 'SUCCESSFUL') {
+      return res.status(mapStatusHTTP(serviceResponse.status)).json(serviceResponse.data);
+    }
+    return res.status(200).json(serviceResponse.data);
+  }
 }
