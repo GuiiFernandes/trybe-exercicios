@@ -4,9 +4,7 @@
 import random
 
 
-def get_words(file_name):
-    if not len(file_name):
-        file_name = "words.txt"
+def get_words(file_name="words.txt"):
     if not file_name.endswith(".txt"):
         file_name += ".txt"
     with open(file_name, "r") as file:
