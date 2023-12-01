@@ -1,0 +1,9 @@
+Exercício 1
+Tipos abstratos de dados possuem uma única implementação bem documentada?
+
+R: Tipos abstratos devem ser bem documentados para uso consistente e correta, porém não possuem uma única implementação sendo a TAD apenas uma abstração matemática que descreve um conjunto de valores e operações sobre os dados.
+
+Exercício 2
+Listas(list), dicionários(dict) e conjuntos(set), que já vêm no Python, são considerados tipos de dados? Caso negativo, justifique sua resposta.
+
+R: Sim, são considerados estrutura de dados que são implementações de tipos abstratos de dados (TADs).
