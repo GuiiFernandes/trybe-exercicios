@@ -2,10 +2,45 @@ package com.trybe.electronic;
 
 public class Television {
 
-  String brand;
-  String model;
-  int size;
-  boolean isOn = false;
+  private final String brand;
+  private final String model;
+  private final int size;
+
+  private String systemVersion = "1.0.0";
+
+  public String getSystemVersion() {
+    return systemVersion;
+  }
+
+  public void setSystemVersion(String systemVersion) {
+    this.systemVersion = systemVersion;
+  }
+
+  private boolean isOn = false;
+
+  private static double INCH_TO_CM = 2.54;
+
+  private int volume = 10;
+
+  public String getBrand() {
+    return brand;
+  }
+
+  public String getModel() {
+    return model;
+  }
+
+  public int getSize() {
+    return size;
+  }
+
+  public boolean isOn() {
+    return isOn;
+  }
+
+  public int getVolume() {
+    return volume;
+  }
 
   public Television(String brand, String model, int size) {
     this.brand = brand;
@@ -13,34 +48,41 @@ public class Television {
     this.size = size;
   }
 
-  public static void main(String[] args) {
-    System.out.println("Iniciando sistema...");
-
-    Television television = new Television("Phillips", "LCD", 32);
-
-    television.turnOn();
-    System.out.println(television.info());
-    television.turnOff();
-    System.out.println(television.info());
-    System.out.println("Finalizando sistema...");
+  public void changeOn() {
+    System.out.println(this.isOn ? "Desligando televisão..." : "Ligando televisão...");
+    this.isOn = !this.isOn;
   }
 
-  public void turnOn() {
-    System.out.println("Ligando televisão...");
-    this.isOn = true;
-  }
-
-  public void turnOff() {
-    System.out.println("Desligando televisão...");
-    this.isOn = false;
+  private void verifyOn() {
+    if (!this.isOn) {
+      throw new IllegalStateException("Televisão desligada.");
+    }
   }
 
   public String info() {
-    if (!this.isOn) {
-      return "Televisão desligada.";
-    }
-    return "Marca: %s, Modelo: %s, Tamanho: %d, Ligada: %b".formatted(
-        brand, model, size, isOn
+    verifyOn();
+    return "Marca: %s, Modelo: %s, Tamanho: %d, System Version: %s".formatted(
+        getBrand(), getModel(), getSize(), getSystemVersion()
     );
+  }
+
+  /**
+   * Change volume.
+   *
+   * @param multiplier passe +1 para aumentar o volume e -1 para diminuir.
+   */
+  public void changeVolume(int multiplier) {
+    verifyOn();
+    if (multiplier != 1 && multiplier != -1) {
+      throw new IllegalArgumentException("Multiplier must be 1 or -1");
+    }
+    int MAX_VOLUME = 50;
+    if (volume >= 0 && volume <= MAX_VOLUME) {
+      volume += multiplier;
+    }
+  }
+
+  public static double sizeInCm(double inches) {
+    return inches * INCH_TO_CM;
   }
 }
