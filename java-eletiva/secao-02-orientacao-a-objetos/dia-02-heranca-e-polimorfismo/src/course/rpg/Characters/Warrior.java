@@ -1,6 +1,7 @@
 package course.rpg.Characters;
 
 public class Warrior extends PlayableCharacter {
+
   private String weapon;
 
   public String getWeapon() {
@@ -11,9 +12,14 @@ public class Warrior extends PlayableCharacter {
     this.weapon = weapon;
   }
 
+  @Override
+  public void attack() {
+    System.out.println(this.getName() + " ataca com sua arma.");
+  }
+
   public void specialAttack() {
     if (!isAlive) {
-      System.out.println("Personagem morreu e não pode usar seu ataque especial.");
+      System.out.println(this.getName() + " morreu e não pode usar seu ataque especial.");
       return;
     }
 
