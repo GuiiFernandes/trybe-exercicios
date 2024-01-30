@@ -1,15 +1,29 @@
 package com.betrybe.podcast.model;
 
+/**
+ * The type Podcast.
+ */
 public class Podcast {
 
   private long id;
   private String name;
   private String url;
 
-  public Podcast(long id, String name, String url) {
+  private String secretToken;
+
+  /**
+   * Instantiates a new Podcast.
+   *
+   * @param id          the id
+   * @param name        the name
+   * @param url         the url
+   * @param secretToken the secret token
+   */
+  public Podcast(long id, String name, String url, String secretToken) {
     this.id = id;
     this.name = name;
     this.url = url;
+    this.secretToken = secretToken;
   }
 
   public long getId() {
@@ -34,5 +48,13 @@ public class Podcast {
 
   public void setUrl(String url) {
     this.url = url;
+  }
+
+  public String getSecretToken() {
+    return secretToken;
+  }
+
+  public void setSecretToken(String secretToken) {
+    this.secretToken = secretToken;
   }
 }
