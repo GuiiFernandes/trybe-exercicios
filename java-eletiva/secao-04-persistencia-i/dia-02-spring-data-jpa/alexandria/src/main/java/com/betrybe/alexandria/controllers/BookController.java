@@ -1,8 +1,10 @@
 package com.betrybe.alexandria.controllers;
 
 import com.betrybe.alexandria.controllers.dto.BookDto;
+import com.betrybe.alexandria.controllers.dto.DetailDto;
 import com.betrybe.alexandria.controllers.dto.ResponseDto;
 import com.betrybe.alexandria.models.entities.Book;
+import com.betrybe.alexandria.models.entities.BookDetail;
 import com.betrybe.alexandria.services.BookService;
 import java.util.List;
 import java.util.Optional;
@@ -39,9 +41,8 @@ public class BookController {
    * @return the response entity
    */
   @PostMapping()
-  public ResponseEntity<ResponseDto<Book>> create(@RequestBody BookDto bookDto) {
-    Book book = bookDto.toBook();
-    Book createdBook = bookService.insert(bookDto.toBook());
+  public ResponseEntity<ResponseDto<Book>> createBook(@RequestBody BookDto bookDto) {
+    Book createdBook = bookService.insertBook(bookDto.toBook());
     return ResponseEntity.status(HttpStatus.CREATED).body(new ResponseDto<Book>(
         "Book created successfully",
         createdBook
@@ -56,11 +57,11 @@ public class BookController {
    * @return the response entity
    */
   @PutMapping("/{id}")
-  public ResponseEntity<ResponseDto<Book>> update(
+  public ResponseEntity<ResponseDto<Book>> updateBook(
       @PathVariable Long id,
       @RequestBody BookDto bookDto
   ) {
-    Optional<Book> optionalBook = bookService.update(id, bookDto.toBook());
+    Optional<Book> optionalBook = bookService.updateBook(id, bookDto.toBook());
     return optionalBook.map(book -> ResponseEntity.status(HttpStatus.OK).body(new ResponseDto<Book>(
         "Book updated successfully",
         book
@@ -77,8 +78,8 @@ public class BookController {
    * @return the response entity
    */
   @DeleteMapping("/{id}")
-  public ResponseEntity<ResponseDto<Book>> remove(@PathVariable Long id) {
-    Optional<Book> optionalBook = bookService.remove(id);
+  public ResponseEntity<ResponseDto<Book>> removeBook(@PathVariable Long id) {
+    Optional<Book> optionalBook = bookService.removeBook(id);
     return optionalBook.map(book -> ResponseEntity.ok(new ResponseDto<>(
         "Book removed successfully",
         book
@@ -95,8 +96,8 @@ public class BookController {
    * @return the by id
    */
   @GetMapping("/{id}")
-  public ResponseEntity<ResponseDto<Book>> getById(@PathVariable Long id) {
-    Optional<Book> optionalBook = bookService.getById(id);
+  public ResponseEntity<ResponseDto<Book>> getBookById(@PathVariable Long id) {
+    Optional<Book> optionalBook = bookService.getBookById(id);
     return optionalBook.map(book -> ResponseEntity.ok(new ResponseDto<>(
         "Book found successfully",
         book
@@ -112,12 +113,98 @@ public class BookController {
    * @return the all
    */
   @GetMapping()
-  public ResponseEntity<ResponseDto<List<Book>>> getAll() {
+  public ResponseEntity<ResponseDto<List<Book>>> getAllBooks() {
     return ResponseEntity.ok(new ResponseDto<List<Book>>(
         "Books found successfully",
-        bookService.getAll().stream()
+        bookService.getAllBooks().stream()
             .map(book -> new BookDto(book.getId(), book.getTitle(), book.getGenre()).toBook())
             .toList()
     ));
+  }
+
+  /**
+   * Create book response entity.
+   *
+   * @param detailDto the detail dto
+   * @return the response entity
+   */
+  @PostMapping("/{id}/detail")
+  public ResponseEntity<ResponseDto<BookDetail>> createDetail(
+      @PathVariable Long id,
+      @RequestBody DetailDto detailDto
+  ) {
+    BookDetail createdDetail = bookService.insertDetail(detailDto.toBookDetail());
+    return ResponseEntity.status(HttpStatus.CREATED).body(new ResponseDto<BookDetail>(
+        "Book detail created successfully",
+        createdDetail
+    ));
+  }
+
+  /**
+   * Update response entity.
+   *
+   * @param id        the id
+   * @param detailId  the detail id
+   * @param detailDto the book dto
+   * @return the response entity
+   */
+  @PutMapping("/{id}/detail/{detailId}")
+  public ResponseEntity<ResponseDto<BookDetail>> updateDetail(
+      @PathVariable Long id,
+      @PathVariable Long detailId,
+      @RequestBody DetailDto detailDto
+  ) {
+    Optional<BookDetail> optionalDetail = bookService.updateDetail(detailId,
+        detailDto.toBookDetail());
+    return optionalDetail.map(
+        detail -> ResponseEntity.status(HttpStatus.OK).body(new ResponseDto<BookDetail>(
+            "Book detail updated successfully",
+            detail
+        ))).orElseGet(() -> ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ResponseDto<>(
+        String.format("Book detail with id %d not found", detailId),
+        null
+    )));
+  }
+
+  /**
+   * Remove response entity.
+   *
+   * @param id the id
+   * @return the response entity
+   */
+  @DeleteMapping("/{id}/detail/{detailId}")
+  public ResponseEntity<ResponseDto<BookDetail>> removeDetail(
+      @PathVariable Long id,
+      @PathVariable Long detailId
+  ) {
+    Optional<BookDetail> optionalDetail = bookService.removeDetail(detailId);
+    return optionalDetail.map(detail -> ResponseEntity.ok(new ResponseDto<>(
+        "Book detail removed successfully",
+        detail
+    ))).orElseGet(() -> ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ResponseDto<>(
+        String.format("Book detail with id %d not found", detailId),
+        null
+    )));
+  }
+
+  /**
+   * Gets by id.
+   *
+   * @param id the id
+   * @return the by id
+   */
+  @GetMapping("/{id}/detail/{detailId}")
+  public ResponseEntity<ResponseDto<BookDetail>> getDetailById(
+      @PathVariable Long id,
+      @PathVariable Long detailId
+  ) {
+    Optional<BookDetail> optionalDetail = bookService.getDetailById(detailId);
+    return optionalDetail.map(detail -> ResponseEntity.ok(new ResponseDto<>(
+        "Book detail found successfully",
+        detail
+    ))).orElseGet(() -> ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ResponseDto<>(
+        String.format("Book detail with id %d not found", detailId),
+        null
+    )));
   }
 }
