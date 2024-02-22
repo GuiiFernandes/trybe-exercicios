@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ca4eaed6-f4a4-40ce-87a6-3ba8cbd4bf02" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../secao-02-orientacao-a-objetos/dia-03-classes-abstratas-e-interfaces/desafio/readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../secao-02-orientacao-a-objetos/dia-03-classes-abstratas-e-interfaces/desafio/src/com/controle_frota/core/Caminhao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../secao-02-orientacao-a-objetos/dia-03-classes-abstratas-e-interfaces/desafio/src/com/controle_frota/core/Carro.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../secao-02-orientacao-a-objetos/dia-03-classes-abstratas-e-interfaces/desafio/src/com/controle_frota/core/Container.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../secao-02-orientacao-a-objetos/dia-03-classes-abstratas-e-interfaces/desafio/src/com/controle_frota/core/ITransportador.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../secao-02-orientacao-a-objetos/dia-03-classes-abstratas-e-interfaces/desafio/src/com/controle_frota/core/Moto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../secao-02-orientacao-a-objetos/dia-03-classes-abstratas-e-interfaces/desafio/src/com/controle_frota/core/Veiculo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../secao-02-orientacao-a-objetos/dia-03-classes-abstratas-e-interfaces/desafio/src/com/controle_frota/main/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../course/meu-projeto-spring/src/main/java/com/betrybe/meuprojetospring/controller/OlaMundoController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../course/test-devtools/src/main/java/com/betrybe/testdevtools/OlaDevToolsController.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 0
+}]]></component>
+  <component name="ProjectId" id="2bUpoSNWIL2HlhjxS8JzWz10Uyh" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "exercicios/java/2.3",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/guifernandes/Docs_Ubuntu/Programação/Curso_Trybe/trybe-exercicios/java-eletiva/secao-03-java-web/dia-01-introducao-a-java-web-e-spring/exercicios/Java-Web",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ca4eaed6-f4a4-40ce-87a6-3ba8cbd4bf02" name="Changes" comment="" />
+      <created>1706279686180</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1706279686180</updated>
+      <workItem from="1706279687197" duration="67000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
