@@ -1,0 +1,26 @@
+services:
+
+  mysql:
+    container_name: trybetrack-mysql
+    image: mysql:8.0.32
+    restart: always
+    ports:
+      - 3306:3306
+    env_file:
+      .env-db
+    volumes:
+      - db_data:/var/lib/mysql
+  api:
+    container_name: trybetrack-api
+    build: .
+    restart: always
+    links:
+      - mysql:database
+    ports:
+      - 8080:8080
+    env_file:
+      .env-api
+    depends_on:
+        - mysql
+volumes:
+    db_data:
