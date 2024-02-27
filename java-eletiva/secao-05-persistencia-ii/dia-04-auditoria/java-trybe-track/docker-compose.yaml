@@ -7,7 +7,7 @@ services:
     ports:
       - 3306:3306
     env_file:
-      .env-db
+      .env
     volumes:
       - db_data:/var/lib/mysql
   api:
@@ -19,7 +19,7 @@ services:
     ports:
       - 8080:8080
     env_file:
-      .env-api
+      .env
     depends_on:
         - mysql
 volumes:
