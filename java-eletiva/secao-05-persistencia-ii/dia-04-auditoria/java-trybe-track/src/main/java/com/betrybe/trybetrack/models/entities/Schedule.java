@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import org.hibernate.envers.Audited;
 
 /**
  * The type Schedule.
@@ -12,6 +13,7 @@ import java.time.LocalTime;
 @Entity
 @Table(name = "schedules")
 @EntityListeners(ScheduleListener.class)
+@Audited
 public class Schedule {
 
   @Id
